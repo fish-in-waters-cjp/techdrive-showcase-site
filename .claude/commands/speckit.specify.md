@@ -89,6 +89,8 @@ Given that feature description, do this:
 
 5. Write the specification to SPEC_FILE using the template structure, replacing placeholders with concrete details derived from the feature description (arguments) while preserving section order and headings.
 
+   **⚠️ CRITICAL: Write the entire specification in Traditional Chinese (zh-TW)** as per Constitution Principle VI. Technical terms (e.g., API, frontend, backend) may remain in English when commonly used in the industry.
+
 6. **Specification Quality Validation**: After writing the initial spec, validate it against quality criteria:
 
    a. **Create Spec Quality Checklist**: Generate a checklist file at `FEATURE_DIR/checklists/requirements.md` using the checklist template structure with these validation items:

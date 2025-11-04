@@ -50,6 +50,8 @@ You **MUST** consider the user input before proceeding (if not empty).
    - Rationale: [why chosen]
    - Alternatives considered: [what else evaluated]
 
+   **⚠️ CRITICAL: Write research.md in Traditional Chinese (zh-TW)** as per Constitution Principle VI. Technical terms may remain in English.
+
 **Output**: research.md with all NEEDS CLARIFICATION resolved
 
 ### Phase 1: Design & Contracts
@@ -72,6 +74,8 @@ You **MUST** consider the user input before proceeding (if not empty).
    - Update the appropriate agent-specific context file
    - Add only new technology from current plan
    - Preserve manual additions between markers
+
+**⚠️ CRITICAL: Write all Phase 1 outputs (data-model.md, quickstart.md) in Traditional Chinese (zh-TW)** as per Constitution Principle VI. Technical terms and code examples may remain in English.
 
 **Output**: data-model.md, /contracts/*, quickstart.md, agent-specific file
 

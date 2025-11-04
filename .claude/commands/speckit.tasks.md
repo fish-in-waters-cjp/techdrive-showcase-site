@@ -43,6 +43,8 @@ You **MUST** consider the user input before proceeding (if not empty).
    - Parallel execution examples per story
    - Implementation strategy section (MVP first, incremental delivery)
 
+   **⚠️ CRITICAL: Write tasks.md in Traditional Chinese (zh-TW)** as per Constitution Principle VI. Technical terms and file paths may remain in English.
+
 5. **Report**: Output path to generated tasks.md and summary:
    - Total task count
    - Task count per user story

@@ -1,5 +1,11 @@
 # Implementation Plan: [FEATURE]
 
+<!--
+  ⚠️ LANGUAGE REQUIREMENT: This plan (including research.md, data-model.md, quickstart.md)
+  MUST be written in Traditional Chinese (zh-TW) as per Constitution Principle VI.
+  Technical terms may remain in English when commonly used.
+-->
+
 **Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
 **Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
 
