@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Product",
+  "description": "TechDrive 產品資料結構",
+  "type": "object",
+  "required": ["id", "name", "slug", "thumbnail", "image", "highlights", "description", "specs", "downloads"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "產品唯一識別碼",
+      "pattern": "^TD-[0-9]+$",
+      "examples": ["TD-100", "TD-200"]
+    },
+    "name": {
+      "type": "string",
+      "description": "產品名稱"
+    },
+    "slug": {
+      "type": "string",
+      "description": "URL 友善的識別碼",
+      "pattern": "^[a-z0-9-]+$",
+      "examples": ["td-100", "td-200"]
+    },
+    "thumbnail": {
+      "type": "string",
+      "description": "產品縮圖路徑（800×600，≤300KB）",
+      "pattern": "^/assets/products/.+\\.(jpg|webp|png)$"
+    },
+    "image": {
+      "type": "string",
+      "description": "產品詳情頁大圖路徑（1200×800，≤300KB）",
+      "pattern": "^/assets/products/.+\\.(jpg|webp|png)$"
+    },
+    "highlights": {
+      "type": "array",
+      "description": "產品亮點（必須恰好 3 個）",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": {
+      "type": "string",
+      "description": "產品描述（2-3 行）",
+      "maxLength": 200
+    },
+    "specs": {
+      "type": "array",
+      "description": "產品規格表（10-15 項）",
+      "minItems": 10,
+      "maxItems": 15,
+      "items": {
+        "type": "object",
+        "required": ["label", "value"],
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "規格名稱"
+          },
+          "value": {
+            "type": "string",
+            "description": "規格值"
+          }
+        }
+      }
+    },
+    "downloads": {
+      "type": "array",
+      "description": "下載連結清單",
+      "items": {
+        "type": "object",
+        "required": ["name", "url", "type"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "下載項目名稱"
+          },
+          "url": {
+            "type": "string",
+            "description": "下載連結（假連結或相對路徑）"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["datasheet", "manual", "other"],
+            "description": "下載類型"
+          }
+        }
+      }
+    },
+    "category": {
+      "type": "string",
+      "description": "產品分類（選填）"
+    },
+    "featured": {
+      "type": "boolean",
+      "description": "是否為精選產品"
+    }
+  }
+}

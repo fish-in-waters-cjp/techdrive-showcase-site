@@ -90,3 +90,10 @@ docs: update designer portal flow in README
 
 # Chore/maintenance
 chore: upgrade Element Plus to v2.4.0
+
+## Active Technologies
+- JavaScript (ES2022+) / Node.js v20 LTS (001-techdrive-showcase-mvp)
+- 本地 JSON 檔案(Mock Data),無後端資料庫 (001-techdrive-showcase-mvp)
+
+## Recent Changes
+- 001-techdrive-showcase-mvp: Added JavaScript (ES2022+) / Node.js v20 LTS
