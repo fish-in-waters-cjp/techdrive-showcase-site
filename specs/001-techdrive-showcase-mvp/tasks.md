@@ -104,18 +104,18 @@ Phase 10 (Polish)
 
 **目標**: 初始化專案、安裝依賴、配置 Vite MPA
 
-- [ ] T001 執行 `pnpm create vite@latest . --template vue` 初始化 Vue 3 + Vite 專案
-- [ ] T002 執行 `pnpm install -D tailwindcss@latest postcss autoprefixer` 安裝 Tailwind CSS v3.4+
-- [ ] T003 執行 `npx tailwindcss init -p` 初始化 Tailwind 配置檔案 (`tailwind.config.js`, `postcss.config.js`)
-- [ ] T004 執行 `pnpm install vue-i18n@latest` 安裝 Vue I18n v10+
-- [ ] T005 執行 `pnpm install vee-validate@latest yup` 安裝 VeeValidate v4.15+ 與 Yup
-- [ ] T006 執行 `pnpm install pinia@latest` 安裝 Pinia v2.3+
-- [ ] T007 建立 `/vite.config.js` - 配置 Vite MPA (8個 HTML entry points)
-- [ ] T008 建立 `/tailwind.config.js` - 配置 Tailwind (content paths, theme, plugins)
-- [ ] T009 建立 `/src/styles/globals.css` - 匯入 Tailwind directives (`@tailwind base/components/utilities`)
-- [ ] T010 建立 `/public/assets/` 目錄結構 (hero/, products/, tech/, retailers/, placeholders/)
-- [ ] T011 建立 `/public/data/` 目錄,放置 Mock Data JSON 檔案
-- [ ] T012 建立 `/public/locales/` 目錄,放置 i18n 語系檔案 (`zh-TW.json`, `en.json`)
+- [X] T001 執行 `pnpm create vite@latest . --template vue` 初始化 Vue 3 + Vite 專案
+- [X] T002 執行 `pnpm install -D tailwindcss@latest postcss autoprefixer` 安裝 Tailwind CSS v3.4+
+- [X] T003 執行 `npx tailwindcss init -p` 初始化 Tailwind 配置檔案 (`tailwind.config.js`, `postcss.config.js`)
+- [X] T004 執行 `pnpm install vue-i18n@latest` 安裝 Vue I18n v10+
+- [X] T005 執行 `pnpm install vee-validate@latest yup` 安裝 VeeValidate v4.15+ 與 Yup
+- [X] T006 執行 `pnpm install pinia@latest` 安裝 Pinia v2.3+
+- [X] T007 建立 `/vite.config.js` - 配置 Vite MPA (8個 HTML entry points)
+- [X] T008 建立 `/tailwind.config.js` - 配置 Tailwind (content paths, theme, plugins)
+- [X] T009 建立 `/src/styles/globals.css` - 匯入 Tailwind directives (`@tailwind base/components/utilities`)
+- [X] T010 建立 `/public/assets/` 目錄結構 (hero/, products/, tech/, retailers/, placeholders/)
+- [X] T011 建立 `/public/data/` 目錄,放置 Mock Data JSON 檔案
+- [X] T012 建立 `/public/locales/` 目錄,放置 i18n 語系檔案 (`zh-TW.json`, `en.json`)
 
 **輸出**: ✅ 開發環境就緒,可執行 `pnpm dev`
 

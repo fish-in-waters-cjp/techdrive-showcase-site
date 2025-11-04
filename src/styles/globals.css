@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 全域樣式重置 */
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans text-body text-brand-gray-900 bg-white antialiased;
+  }
+
+  h1 {
+    @apply text-h1;
+  }
+
+  h2 {
+    @apply text-h2;
+  }
+
+  h3 {
+    @apply text-h3;
+  }
+
+  h4 {
+    @apply text-h4;
+  }
+}
+
+/* 自訂元件樣式 */
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-brand-blue text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent border-2 border-brand-blue text-brand-blue font-medium rounded-lg hover:bg-brand-blue hover:text-white transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 transition-shadow duration-200 hover:shadow-xl;
+  }
+
+  .container-custom {
+    @apply max-w-[1440px] mx-auto px-4 tablet:px-8 desktop:px-16;
+  }
+}
+
+/* 動畫工具類 */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
