@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDrive - Responsive Design Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --brand-blue: #0066FF;
+            --gray-900: #1A1A1A;
+            --gray-700: #404040;
+            --gray-600: #666666;
+            --gray-300: #CCCCCC;
+            --gray-100: #F5F5F5;
+            --white: #FFFFFF;
+            --space-3: 16px;
+            --space-4: 24px;
+            --space-5: 32px;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--gray-100);
+            line-height: 1.6;
+            color: var(--gray-900);
+        }
+
+        /* Viewport Indicator */
+        .viewport-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--brand-blue);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            z-index: 9999;
+            box-shadow: var(--shadow-md);
+        }
+
+        .viewport-indicator::before {
+            content: '🖥️ Desktop (≥1280px)';
+        }
+
+        /* Demo Container */
+        .demo-container {
+            padding: var(--space-5);
+        }
+
+        .demo-section {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: var(--space-5);
+            margin-bottom: var(--space-4);
+            box-shadow: var(--shadow-md);
+        }
+
+        .demo-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: var(--space-3);
+            color: var(--gray-900);
+        }
+
+        .demo-desc {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-bottom: var(--space-4);
+            padding: var(--space-3);
+            background: var(--gray-100);
+            border-radius: var(--radius-sm);
+        }
+
+        /* Grid System Demo */
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-3);
+        }
+
+        .grid-item {
+            background: var(--brand-blue);
+            color: var(--white);
+            padding: var(--space-4);
+            border-radius: var(--radius-sm);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Navigation Demo */
+        .nav-demo {
+            background: var(--gray-900);
+            padding: var(--space-4);
+            border-radius: var(--radius-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-4);
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .nav-hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+        }
+
+        /* Card Layout Demo */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-4);
+        }
+
+        .demo-card {
+            background: var(--gray-100);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .card-image {
+            height: 150px;
+            background: var(--gray-300);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-600);
+        }
+
+        .card-content {
+            padding: var(--space-3);
+        }
+
+        .card-title {
+            font-weight: 600;
+            margin-bottom: var(--space-3);
+        }
+
+        .card-text {
+            font-size: 14px;
+            color: var(--gray-600);
+        }
+
+        /* Typography Demo */
+        .type-desktop {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: var(--space-3);
+        }
+
+        .type-tablet {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: var(--space-3);
+            display: none;
+        }
+
+        .type-mobile {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: var(--space-3);
+            display: none;
+        }
+
+        /* Breakpoint: Tablet (768px - 1279px) */
+        @media (max-width: 1279px) {
+            .viewport-indicator::before {
+                content: '💻 Tablet (768-1279px)';
+            }
+
+            .grid-demo {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .type-desktop {
+                display: none;
+            }
+
+            .type-tablet {
+                display: block;
+            }
+        }
+
+        /* Breakpoint: Mobile (≤767px) */
+        @media (max-width: 767px) {
+            .viewport-indicator::before {
+                content: '📱 Mobile (≤767px)';
+            }
+
+            .viewport-indicator {
+                bottom: 10px;
+                right: 10px;
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+
+            .demo-container {
+                padding: var(--space-3);
+            }
+
+            .demo-section {
+                padding: var(--space-3);
+            }
+
+            .demo-title {
+                font-size: 20px;
+            }
+
+            .grid-demo,
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-hamburger {
+                display: flex;
+            }
+
+            .type-desktop,
+            .type-tablet {
+                display: none;
+            }
+
+            .type-mobile {
+                display: block;
+            }
+        }
+
+        /* Demo Frames */
+        .device-frames {
+            display: flex;
+            gap: var(--space-4);
+            justify-content: center;
+            margin: var(--space-5) 0;
+            flex-wrap: wrap;
+        }
+
+        .device-frame {
+            text-align: center;
+        }
+
+        .device-screen {
+            border: 3px solid var(--gray-900);
+            border-radius: 12px;
+            background: var(--white);
+            padding: var(--space-3);
+            box-shadow: var(--shadow-md);
+        }
+
+        .frame-desktop {
+            width: 400px;
+            height: 250px;
+        }
+
+        .frame-tablet {
+            width: 250px;
+            height: 350px;
+        }
+
+        .frame-mobile {
+            width: 150px;
+            height: 300px;
+        }
+
+        .frame-label {
+            margin-top: var(--space-3);
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        .frame-content {
+            background: var(--gray-100);
+            height: 100%;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--gray-600);
+            padding: var(--space-3);
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--space-4);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: var(--space-3);
+            text-align: left;
+            border-bottom: 1px solid var(--gray-300);
+        }
+
+        .comparison-table th {
+            background: var(--gray-900);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .comparison-table td:first-child {
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+    </style>
+</head>
+<body>
+    <!-- Viewport Indicator -->
+    <div class="viewport-indicator"></div>
+
+    <div class="demo-container">
+        <div class="demo-section">
+            <h1 style="font-size: 36px; font-weight: 700; margin-bottom: var(--space-4);">
+                響應式設計示範
+            </h1>
+            <p style="font-size: 18px; color: var(--gray-600); margin-bottom: var(--space-5);">
+                調整瀏覽器視窗大小，查看不同斷點下的佈局變化
+            </p>
+        </div>
+
+        <!-- Device Frames -->
+        <div class="demo-section">
+            <div class="demo-title">裝置視窗比例</div>
+            <div class="device-frames">
+                <div class="device-frame">
+                    <div class="device-screen frame-desktop">
+                        <div class="frame-content">
+                            <div>
+                                <div style="font-size: 14px; font-weight: 600; margin-bottom: 8px;">Desktop</div>
+                                <div>≥1280px</div>
+                                <div>4欄網格</div>
+                                <div>水平導航</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="frame-label">🖥️ Desktop</div>
+                </div>
+
+                <div class="device-frame">
+                    <div class="device-screen frame-tablet">
+                        <div class="frame-content">
+                            <div>
+                                <div style="font-size: 14px; font-weight: 600; margin-bottom: 8px;">Tablet</div>
+                                <div>768-1279px</div>
+                                <div>2欄網格</div>
+                                <div>水平導航</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="frame-label">💻 Tablet</div>
+                </div>
+
+                <div class="device-frame">
+                    <div class="device-screen frame-mobile">
+                        <div class="frame-content">
+                            <div>
+                                <div style="font-size: 14px; font-weight: 600; margin-bottom: 8px;">Mobile</div>
+                                <div>≤767px</div>
+                                <div>1欄網格</div>
+                                <div>漢堡選單</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="frame-label">📱 Mobile</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid System -->
+        <div class="demo-section">
+            <div class="demo-title">1. Grid System 網格系統</div>
+            <div class="demo-desc">
+                📐 Desktop: 4欄 | Tablet: 2欄 | Mobile: 1欄
+            </div>
+            <div class="grid-demo">
+                <div class="grid-item">Grid 1</div>
+                <div class="grid-item">Grid 2</div>
+                <div class="grid-item">Grid 3</div>
+                <div class="grid-item">Grid 4</div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="demo-section">
+            <div class="demo-title">2. Navigation 導航列</div>
+            <div class="demo-desc">
+                🧭 Desktop/Tablet: 水平選單 | Mobile: 漢堡選單
+            </div>
+            <div class="nav-demo">
+                <div class="nav-logo">TechDrive</div>
+                <div class="nav-links">
+                    <a href="#" class="nav-link">首頁</a>
+                    <a href="#" class="nav-link">產品</a>
+                    <a href="#" class="nav-link">關於</a>
+                    <a href="#" class="nav-link">聯絡</a>
+                </div>
+                <div class="nav-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Layout -->
+        <div class="demo-section">
+            <div class="demo-title">3. Card Layout 卡片佈局</div>
+            <div class="demo-desc">
+                🗂️ Desktop: 3欄 | Tablet: 2欄 | Mobile: 1欄
+            </div>
+            <div class="card-grid">
+                <div class="demo-card">
+                    <div class="card-image">Image</div>
+                    <div class="card-content">
+                        <div class="card-title">SmartHub Pro X1</div>
+                        <div class="card-text">8核心處理器，4K UHD 顯示</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <div class="card-image">Image</div>
+                    <div class="card-content">
+                        <div class="card-title">DriveSync Elite</div>
+                        <div class="card-text">AI 智能導航，360° 監控</div>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <div class="card-image">Image</div>
+                    <div class="card-content">
+                        <div class="card-title">SafeGuard Max</div>
+                        <div class="card-text">主動式防護，雙鏡頭記錄</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typography -->
+        <div class="demo-section">
+            <div class="demo-title">4. Typography 字級系統</div>
+            <div class="demo-desc">
+                ✏️ Desktop: 40px | Tablet: 32px | Mobile: 28px
+            </div>
+            <div class="type-desktop">智能車載 科技領航</div>
+            <div class="type-tablet">智能車載 科技領航</div>
+            <div class="type-mobile">智能車載 科技領航</div>
+            <p style="color: var(--gray-600); font-size: 14px;">
+                調整視窗大小以查看不同字級
+            </p>
+        </div>
+
+        <!-- Breakpoint Comparison Table -->
+        <div class="demo-section">
+            <div class="demo-title">5. Breakpoint Specifications 斷點規格</div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>Desktop (≥1280px)</th>
+                        <th>Tablet (768-1279px)</th>
+                        <th>Mobile (≤767px)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>網格欄數</td>
+                        <td>4欄</td>
+                        <td>2欄</td>
+                        <td>1欄</td>
+                    </tr>
+                    <tr>
+                        <td>導航樣式</td>
+                        <td>水平選單</td>
+                        <td>水平選單</td>
+                        <td>漢堡選單</td>
+                    </tr>
+                    <tr>
+                        <td>H1 字級</td>
+                        <td>40px</td>
+                        <td>32px</td>
+                        <td>28px</td>
+                    </tr>
+                    <tr>
+                        <td>H2 字級</td>
+                        <td>28px</td>
+                        <td>24px</td>
+                        <td>22px</td>
+                    </tr>
+                    <tr>
+                        <td>Container Padding</td>
+                        <td>48px</td>
+                        <td>32px</td>
+                        <td>16px</td>
+                    </tr>
+                    <tr>
+                        <td>產品卡片</td>
+                        <td>3欄</td>
+                        <td>2欄</td>
+                        <td>1欄</td>
+                    </tr>
+                    <tr>
+                        <td>Footer 欄位</td>
+                        <td>4欄</td>
+                        <td>2欄</td>
+                        <td>1欄</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Testing Instructions -->
+        <div class="demo-section">
+            <div class="demo-title">6. Testing Instructions 測試說明</div>
+            <div style="line-height: 2; color: var(--gray-700);">
+                <p><strong>測試步驟：</strong></p>
+                <ol style="margin-left: 20px; margin-top: var(--space-3);">
+                    <li>在桌機上開啟此頁面（Chrome DevTools 建議使用 F12）</li>
+                    <li>按下 Cmd+Shift+M (Mac) 或 Ctrl+Shift+M (Windows) 開啟響應式設計模式</li>
+                    <li>選擇預設裝置：iPhone 14 Pro、iPad Air、Desktop HD</li>
+                    <li>或手動調整視窗寬度，觀察斷點切換：
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>1280px 以上：Desktop</li>
+                            <li>768px - 1279px：Tablet</li>
+                            <li>767px 以下：Mobile</li>
+                        </ul>
+                    </li>
+                    <li>右下角會顯示目前的視窗類型</li>
+                </ol>
+
+                <p style="margin-top: var(--space-4);"><strong>檢查項目：</strong></p>
+                <ul style="margin-left: 20px; margin-top: var(--space-3);">
+                    <li>✓ 網格欄數是否正確切換（4欄→2欄→1欄）</li>
+                    <li>✓ 導航列是否顯示漢堡選單（Mobile）</li>
+                    <li>✓ 字級大小是否符合規格</li>
+                    <li>✓ 間距是否適當調整</li>
+                    <li>✓ 內容是否清晰可讀，無破版或重疊</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update viewport indicator on resize
+        function updateViewportIndicator() {
+            const width = window.innerWidth;
+            const indicator = document.querySelector('.viewport-indicator');
+
+            if (width >= 1280) {
+                console.log('Viewport: Desktop (≥1280px)');
+            } else if (width >= 768) {
+                console.log('Viewport: Tablet (768-1279px)');
+            } else {
+                console.log('Viewport: Mobile (≤767px)');
+            }
+        }
+
+        window.addEventListener('resize', updateViewportIndicator);
+        updateViewportIndicator();
+    </script>
+</body>
+</html>

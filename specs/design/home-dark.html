@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDrive - The Power of Smart Driving</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Dark Theme - 參考 NOCO Boost */
+            --bg-primary: #1e1e1e;
+            --bg-secondary: #1f1f1f;
+            --bg-tertiary: #2a2a2a;
+
+            /* Brand */
+            --brand-blue: #0066FF;
+            --brand-blue-light: #3385ff;
+
+            /* Text */
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --text-tertiary: #808080;
+
+            /* Spacing - 更大的間距 */
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-2xl: 48px;
+            --space-3xl: 64px;
+            --space-4xl: 80px;
+            --space-6xl: 120px;
+
+            /* Typography - 更大的字級 */
+            --font-hero: 72px;
+            --font-h1: 56px;
+            --font-h2: 36px;
+            --font-h3: 28px;
+            --font-body-lg: 18px;
+            --font-body: 16px;
+            --font-sm: 14px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header - 固定深色半透明 */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(30, 30, 30, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--bg-tertiary);
+        }
+
+        .header-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: var(--space-lg) var(--space-2xl);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .nav {
+            display: flex;
+            gap: var(--space-2xl);
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: var(--font-body);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+
+        /* Hero - 大型全屏 */
+        .hero {
+            margin-top: 80px;
+            padding: var(--space-6xl) 0;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 var(--space-2xl);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4xl);
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: var(--font-hero);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: var(--space-xl);
+        }
+
+        .hero-subtitle {
+            font-size: var(--font-h3);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-2xl);
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: var(--space-lg);
+        }
+
+        .btn {
+            padding: var(--space-md) var(--space-xl);
+            border-radius: 8px;
+            font-size: var(--font-body);
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-primary {
+            background: var(--brand-blue);
+            color: var(--text-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--brand-blue-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            height: 600px;
+            background: linear-gradient(135deg, var(--bg-tertiary), #333);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-tertiary);
+            font-size: var(--font-h3);
+        }
+
+        /* Product Section - 參考 NOCO Boost 風格 */
+        .product-section {
+            padding: var(--space-6xl) 0;
+            border-top: 1px solid var(--bg-tertiary);
+        }
+
+        .product-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 var(--space-2xl);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-4xl);
+        }
+
+        .section-title {
+            font-size: var(--font-h1);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-md);
+        }
+
+        .section-subtitle {
+            font-size: var(--font-body-lg);
+            color: var(--text-secondary);
+        }
+
+        /* 4欄產品卡網格 - 類似 NOCO */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-xl);
+        }
+
+        .product-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.25s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
+        }
+
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--bg-tertiary), #333);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-tertiary);
+        }
+
+        .product-info {
+            padding: var(--space-lg);
+        }
+
+        .product-name {
+            font-size: var(--font-body-lg);
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+        }
+
+        .product-specs {
+            font-size: var(--font-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+            line-height: 1.4;
+        }
+
+        .product-price {
+            font-size: var(--font-h3);
+            font-weight: 700;
+            color: var(--brand-blue);
+            margin-bottom: var(--space-md);
+        }
+
+        .product-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: var(--font-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            transition: gap 0.25s;
+        }
+
+        .product-link:hover {
+            gap: var(--space-md);
+        }
+
+        .product-link::after {
+            content: "→";
+            font-size: var(--font-body-lg);
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: var(--space-6xl) 0;
+            background: var(--bg-secondary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-3xl);
+            margin-top: var(--space-4xl);
+        }
+
+        .feature-card {
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--space-lg);
+            background: linear-gradient(135deg, var(--brand-blue), #0052cc);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-h2);
+        }
+
+        .feature-title {
+            font-size: var(--font-h3);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+        }
+
+        .feature-description {
+            font-size: var(--font-body);
+            color: var(--text-secondary);
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: var(--space-6xl) 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: var(--font-h1);
+            font-weight: 900;
+            margin-bottom: var(--space-lg);
+        }
+
+        .cta-description {
+            font-size: var(--font-body-lg);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-2xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        .footer {
+            padding: var(--space-4xl) 0;
+            border-top: 1px solid var(--bg-tertiary);
+        }
+
+        .footer-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 var(--space-2xl);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            color: var(--text-tertiary);
+            font-size: var(--font-sm);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: var(--space-xl);
+        }
+
+        .footer-link {
+            color: var(--text-tertiary);
+            text-decoration: none;
+            font-size: var(--font-sm);
+            transition: color 0.2s;
+        }
+
+        .footer-link:hover {
+            color: var(--text-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --font-hero: 48px;
+                --font-h1: 36px;
+                --font-h2: 28px;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                height: 400px;
+            }
+
+            .product-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">TECHDRIVE</div>
+            <nav class="nav">
+                <a href="#products" class="nav-link">產品</a>
+                <a href="#features" class="nav-link">功能</a>
+                <a href="#support" class="nav-link">支援</a>
+                <a href="#about" class="nav-link">關於</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h1 class="hero-title">MEET TECHDRIVE.</h1>
+                <p class="hero-subtitle">The power of smart driving.</p>
+                <div class="hero-cta">
+                    <a href="#products" class="btn btn-primary">探索產品</a>
+                    <a href="#demo" class="btn btn-secondary">觀看展示</a>
+                </div>
+            </div>
+            <div class="hero-image">Hero Product Image</div>
+        </div>
+    </section>
+
+    <!-- SmartConnect Series -->
+    <section class="product-section" id="products">
+        <div class="product-container">
+            <div class="section-header">
+                <h2 class="section-title">SMARTCONNECT SERIES</h2>
+                <p class="section-subtitle">智慧連接，無縫體驗</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">Product</div>
+                    <div class="product-info">
+                        <h3 class="product-name">SmartHub Pro X1</h3>
+                        <p class="product-specs">8-Core 4K UHD Smart Display</p>
+                        <p class="product-price">NT$ 15,900</p>
+                        <a href="#" class="product-link">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Product</div>
+                    <div class="product-info">
+                        <h3 class="product-name">ConnectPro Mini</h3>
+                        <p class="product-specs">Compact Wireless CarPlay Adapter</p>
+                        <p class="product-price">NT$ 4,900</p>
+                        <a href="#" class="product-link">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Product</div>
+                    <div class="product-info">
+                        <h3 class="product-name">SmartHub Pro X2</h3>
+                        <p class="product-specs">12-Core 5G Connected Display</p>
+                        <p class="product-price">NT$ 22,900</p>
+                        <a href="#" class="product-link">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Product</div>
+                    <div class="product-info">
+                        <h3 class="product-name">ConnectPro Max</h3>
+                        <p class="product-specs">Premium Multi-Device Hub</p>
+                        <p class="product-price">NT$ 8,900</p>
+                        <a href="#" class="product-link">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ActiveTech Series -->
+    <section class="product-section">
+        <div class="product-container">
+            <div class="section-header">
+                <h2 class="section-title">ACTIVETECH SERIES</h2>
+                <p class="section-subtitle">主動安全，智能守護</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">Product</div>
+                    <div class="product-info">
+                        <h3 class="product-name">DriveSync Elite</h3>
+                        <p class="product-specs">AI-Powered Dash Camera System</p>
+                        <p class="product-price">NT$ 12,900</p>
+                        <a href="#" class="product-link">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Product</div>
+                    <div class="product-info">
+                        <h3 class="product-name">SafeGuard Max</h3>
+                        <p class="product-specs">360° Surround View Monitor</p>
+                        <p class="product-price">NT$ 18,900</p>
+                        <a href="#" class="product-link">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Product</div>
+                    <div class="product-info">
+                        <h3 class="product-name">DriveSync Pro</h3>
+                        <p class="product-specs">Dual 4K Recording System</p>
+                        <p class="product-price">NT$ 9,900</p>
+                        <a href="#" class="product-link">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Product</div>
+                    <div class="product-info">
+                        <h3 class="product-name">SafeGuard Lite</h3>
+                        <p class="product-specs">Essential Safety Monitor</p>
+                        <p class="product-price">NT$ 6,900</p>
+                        <a href="#" class="product-link">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EcoCharge Series -->
+    <section class="product-section">
+        <div class="product-container">
+            <div class="section-header">
+                <h2 class="section-title">ECOCHARGE SERIES</h2>
+                <p class="section-subtitle">環保充電，永續未來</p>
+            </div>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">Product</div>
+                    <div class="product-info">
+                        <h3 class="product-name">EcoCharge Plus</h3>
+                        <p class="product-specs">100W Fast Charging Station</p>
+                        <p class="product-price">NT$ 3,900</p>
+                        <a href="#" class="product-link">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Product</div>
+                    <div class="product-info">
+                        <h3 class="product-name">AudioLink Premium</h3>
+                        <p class="product-specs">Hi-Res Audio Streaming Device</p>
+                        <p class="product-price">NT$ 7,900</p>
+                        <a href="#" class="product-link">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Product</div>
+                    <div class="product-info">
+                        <h3 class="product-name">EcoCharge Max</h3>
+                        <p class="product-specs">150W Multi-Port Charger</p>
+                        <p class="product-price">NT$ 5,900</p>
+                        <a href="#" class="product-link">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">Product</div>
+                    <div class="product-info">
+                        <h3 class="product-name">AudioLink Basic</h3>
+                        <p class="product-specs">Essential Audio Adapter</p>
+                        <p class="product-price">NT$ 2,900</p>
+                        <a href="#" class="product-link">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-section" id="features">
+        <div class="product-container">
+            <div class="section-header">
+                <h2 class="section-title">為什麼選擇 TECHDRIVE</h2>
+                <p class="section-subtitle">領先科技，卓越體驗</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">尖端科技</h3>
+                    <p class="feature-description">採用最新 AI 技術與高效能處理器，提供流暢智慧的使用體驗</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 class="feature-title">安全可靠</h3>
+                    <p class="feature-description">通過嚴格測試認證，確保產品的耐用性與行車安全</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h3 class="feature-title">品質保證</h3>
+                    <p class="feature-description">全系列產品提供完整保固，專業客服團隊隨時支援</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="product-container">
+            <h2 class="cta-title">準備升級您的駕駛體驗？</h2>
+            <p class="cta-description">探索 TechDrive 全系列產品，為您的愛車帶來智慧科技的力量</p>
+            <div class="hero-cta">
+                <a href="#" class="btn btn-primary">瀏覽全部產品</a>
+                <a href="#" class="btn btn-secondary">聯絡我們</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">© 2025 TechDrive. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">隱私權政策</a>
+                <a href="#" class="footer-link">使用條款</a>
+                <a href="#" class="footer-link">聯絡我們</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

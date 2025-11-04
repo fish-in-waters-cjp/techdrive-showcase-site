@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDrive - Component Library</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --brand-blue: #0066FF;
+            --brand-blue-dark: #0052CC;
+            --black: #000000;
+            --gray-900: #1A1A1A;
+            --gray-800: #2D2D2D;
+            --gray-700: #404040;
+            --gray-600: #666666;
+            --gray-300: #CCCCCC;
+            --gray-200: #E5E5E5;
+            --gray-100: #F5F5F5;
+            --white: #FFFFFF;
+            --success: #00C853;
+            --error: #FF3B30;
+            --space-2: 8px;
+            --space-3: 16px;
+            --space-4: 24px;
+            --space-5: 32px;
+            --space-6: 48px;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --transition-base: 150ms ease;
+            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--gray-100);
+            padding: var(--space-6);
+            line-height: 1.6;
+            color: var(--gray-900);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: var(--space-6);
+            border-radius: var(--radius-md);
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: var(--space-5);
+            color: var(--black);
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: var(--space-6) 0 var(--space-4) 0;
+            color: var(--gray-900);
+            border-bottom: 2px solid var(--brand-blue);
+            padding-bottom: var(--space-2);
+        }
+
+        .component-section {
+            margin-bottom: var(--space-6);
+            padding: var(--space-5);
+            background: var(--gray-100);
+            border-radius: var(--radius-sm);
+        }
+
+        /* Header Component */
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            margin: calc(var(--space-6) * -1) calc(var(--space-6) * -1) var(--space-5);
+            border-radius: var(--radius-md) var(--radius-md) 0 0;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-4);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--brand-blue);
+        }
+
+        .nav {
+            display: flex;
+            gap: var(--space-5);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-weight: 500;
+            transition: color var(--transition-base);
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover {
+            color: var(--brand-blue);
+        }
+
+        .nav-link.active {
+            color: var(--brand-blue);
+            border-bottom-color: var(--brand-blue);
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: var(--space-2);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--gray-600);
+            font-size: 14px;
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-base);
+        }
+
+        .lang-btn.active {
+            background: var(--brand-blue);
+            color: var(--white);
+        }
+
+        /* Mobile Navigation Drawer */
+        .drawer-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+        }
+
+        .drawer-overlay.active {
+            display: block;
+        }
+
+        .drawer {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100%;
+            background: var(--white);
+            box-shadow: var(--shadow-lg);
+            transition: right 0.3s ease;
+            z-index: 2001;
+            padding: var(--space-4);
+        }
+
+        .drawer.active {
+            right: 0;
+        }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-5);
+        }
+
+        .drawer-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray-700);
+        }
+
+        .drawer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .drawer-link {
+            text-decoration: none;
+            color: var(--gray-700);
+            font-size: 16px;
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-base);
+        }
+
+        .drawer-link:hover,
+        .drawer-link.active {
+            background: var(--gray-100);
+            color: var(--brand-blue);
+        }
+
+        /* Product Compare Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-4);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            max-width: 1000px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-4);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--gray-600);
+            padding: 8px;
+        }
+
+        .modal-content {
+            padding: var(--space-5);
+        }
+
+        /* Compare Table */
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .compare-table th,
+        .compare-table td {
+            padding: var(--space-3);
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .compare-table th {
+            background: var(--gray-100);
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+
+        .compare-table td:first-child {
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--space-3);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: var(--space-4);
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray-900);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background var(--transition-base);
+        }
+
+        .faq-question:hover {
+            background: var(--gray-100);
+        }
+
+        .faq-icon {
+            font-size: 20px;
+            transition: transform var(--transition-base);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer-content {
+            padding: 0 var(--space-4) var(--space-4);
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Loading Spinner */
+        .loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: 4000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--gray-200);
+            border-top-color: var(--brand-blue);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: var(--space-4);
+            right: var(--space-4);
+            background: var(--white);
+            padding: var(--space-4);
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            min-width: 300px;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 5000;
+        }
+
+        .toast.active {
+            transform: translateX(0);
+        }
+
+        .toast-success {
+            border-left: 4px solid var(--success);
+        }
+
+        .toast-error {
+            border-left: 4px solid var(--error);
+        }
+
+        .toast-icon {
+            font-size: 24px;
+        }
+
+        .toast-message {
+            flex: 1;
+        }
+
+        .toast-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--gray-600);
+            font-size: 20px;
+        }
+
+        /* Buttons Demo */
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: var(--space-3);
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: var(--radius-sm);
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--brand-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--brand-blue-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--gray-300);
+            color: var(--gray-800);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--brand-blue);
+            color: var(--brand-blue);
+        }
+
+        /* Demo Controls */
+        .demo-controls {
+            display: flex;
+            gap: var(--space-3);
+            margin-top: var(--space-4);
+        }
+
+        @media (max-width: 767px) {
+            body {
+                padding: var(--space-3);
+            }
+
+            .container {
+                padding: var(--space-4);
+            }
+
+            .modal {
+                max-width: 100%;
+                margin: var(--space-3);
+            }
+
+            .compare-table {
+                font-size: 14px;
+            }
+
+            .toast {
+                min-width: auto;
+                left: var(--space-3);
+                right: var(--space-3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TechDrive Component Library</h1>
+        <p style="font-size: 18px; color: var(--gray-600); margin-bottom: var(--space-6);">
+            可複用的 UI 組件展示與互動示範
+        </p>
+
+        <!-- Header Component -->
+        <h2>1. Header 導航列</h2>
+        <div class="component-section">
+            <div class="header" style="position: relative; margin: calc(var(--space-5) * -1) calc(var(--space-5) * -1) var(--space-4);">
+                <div class="header-container" style="max-width: 100%;">
+                    <div class="logo">TechDrive</div>
+                    <nav class="nav">
+                        <a href="#" class="nav-link active">首頁</a>
+                        <a href="#" class="nav-link">關於</a>
+                        <a href="#" class="nav-link">產品</a>
+                        <a href="#" class="nav-link">聯絡</a>
+                    </nav>
+                    <div class="lang-switcher">
+                        <button class="lang-btn active">繁中</button>
+                        <button class="lang-btn">EN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <h2>2. Mobile Drawer 抽屜式選單</h2>
+        <div class="component-section">
+            <p style="margin-bottom: var(--space-3); color: var(--gray-600);">
+                手機版導航選單，從右側滑入
+            </p>
+            <button class="btn btn-primary" onclick="openDrawer()">開啟抽屜選單</button>
+        </div>
+
+        <!-- Product Compare Modal -->
+        <h2>3. Product Compare Modal 產品比較</h2>
+        <div class="component-section">
+            <p style="margin-bottom: var(--space-3); color: var(--gray-600);">
+                產品規格比較表（最多 3 件產品）
+            </p>
+            <button class="btn btn-primary" onclick="openCompareModal()">開啟比較表</button>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <h2>4. FAQ Accordion 常見問題</h2>
+        <div class="component-section">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>如何註冊產品保固？</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        請至「客戶支援」頁面填寫產品註冊表單，需提供產品型號、序號與購買證明。註冊完成後，系統將自動寄送確認信至您的 Email。
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>產品保固期限為多久？</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        所有 TechDrive 產品提供 2 年原廠保固，自購買日起計算。部分高階產品可延長至 3 年保固，詳情請參閱產品說明書。
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    <span>支援哪些支付方式？</span>
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        我們支援信用卡、行動支付（Apple Pay、Google Pay）、ATM 轉帳與貨到付款等多種支付方式。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading & Toast -->
+        <h2>5. Loading & Toast Notifications</h2>
+        <div class="component-section">
+            <div class="demo-controls">
+                <button class="btn btn-primary" onclick="showLoading()">顯示 Loading</button>
+                <button class="btn btn-primary" onclick="showToast('success')">成功訊息</button>
+                <button class="btn btn-secondary" onclick="showToast('error')">錯誤訊息</button>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <h2>6. Buttons 按鈕</h2>
+        <div class="component-section">
+            <div class="button-grid">
+                <button class="btn btn-primary">Primary Button</button>
+                <button class="btn btn-secondary">Secondary Button</button>
+                <button class="btn btn-primary" disabled style="opacity: 0.5; cursor: not-allowed;">Disabled Button</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Drawer Overlay -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+    <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <div class="logo">TechDrive</div>
+            <button class="drawer-close" onclick="closeDrawer()">×</button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="#" class="drawer-link active">首頁</a>
+            <a href="#" class="drawer-link">關於我們</a>
+            <a href="#" class="drawer-link">核心技術</a>
+            <a href="#" class="drawer-link">產品系列</a>
+            <a href="#" class="drawer-link">零售合作</a>
+            <a href="#" class="drawer-link">媒體中心</a>
+            <a href="#" class="drawer-link">客戶支援</a>
+            <a href="#" class="drawer-link">聯絡我們</a>
+        </nav>
+    </div>
+
+    <!-- Compare Modal -->
+    <div class="modal-overlay" id="compareModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">產品規格比較</h3>
+                <button class="modal-close" onclick="closeCompareModal()">×</button>
+            </div>
+            <div class="modal-content">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>規格項目</th>
+                            <th>SmartHub Pro X1</th>
+                            <th>DriveSync Elite</th>
+                            <th>SafeGuard Max</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>處理器</td>
+                            <td>8核心 2.4GHz</td>
+                            <td>6核心 2.0GHz</td>
+                            <td>4核心 1.8GHz</td>
+                        </tr>
+                        <tr>
+                            <td>顯示螢幕</td>
+                            <td>10.1" 4K UHD</td>
+                            <td>9" Full HD</td>
+                            <td>7" HD</td>
+                        </tr>
+                        <tr>
+                            <td>連接方式</td>
+                            <td>Wi-Fi 6E, BT 5.3</td>
+                            <td>Wi-Fi 6, BT 5.2</td>
+                            <td>Wi-Fi 5, BT 5.0</td>
+                        </tr>
+                        <tr>
+                            <td>儲存空間</td>
+                            <td>256GB</td>
+                            <td>128GB</td>
+                            <td>64GB</td>
+                        </tr>
+                        <tr>
+                            <td>建議售價</td>
+                            <td>NT$ 15,900</td>
+                            <td>NT$ 12,900</td>
+                            <td>NT$ 9,900</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast toast-success" id="toastSuccess">
+        <div class="toast-icon">✓</div>
+        <div class="toast-message">表單已成功送出！我們會盡快與您聯繫。</div>
+        <button class="toast-close" onclick="closeToast('toastSuccess')">×</button>
+    </div>
+
+    <div class="toast toast-error" id="toastError">
+        <div class="toast-icon">✗</div>
+        <div class="toast-message">送出失敗，請檢查您的網路連線並重試。</div>
+        <button class="toast-close" onclick="closeToast('toastError')">×</button>
+    </div>
+
+    <script>
+        // Drawer
+        function openDrawer() {
+            document.getElementById('drawer').classList.add('active');
+            document.getElementById('drawerOverlay').classList.add('active');
+        }
+
+        function closeDrawer() {
+            document.getElementById('drawer').classList.remove('active');
+            document.getElementById('drawerOverlay').classList.remove('active');
+        }
+
+        // Compare Modal
+        function openCompareModal() {
+            document.getElementById('compareModal').classList.add('active');
+        }
+
+        function closeCompareModal() {
+            document.getElementById('compareModal').classList.remove('active');
+        }
+
+        // FAQ Accordion
+        function toggleFAQ(button) {
+            const item = button.closest('.faq-item');
+            const wasActive = item.classList.contains('active');
+
+            // Close all FAQs
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+            });
+
+            // Toggle current FAQ
+            if (!wasActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Loading
+        function showLoading() {
+            const overlay = document.getElementById('loadingOverlay');
+            overlay.classList.add('active');
+            setTimeout(() => {
+                overlay.classList.remove('active');
+            }, 2000);
+        }
+
+        // Toast
+        function showToast(type) {
+            const toastId = type === 'success' ? 'toastSuccess' : 'toastError';
+            const toast = document.getElementById(toastId);
+            toast.classList.add('active');
+            setTimeout(() => {
+                toast.classList.remove('active');
+            }, 3000);
+        }
+
+        function closeToast(toastId) {
+            document.getElementById(toastId).classList.remove('active');
+        }
+
+        // Close modals on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeDrawer();
+                closeCompareModal();
+            }
+        });
+    </script>
+</body>
+</html>

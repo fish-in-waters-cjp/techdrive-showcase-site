@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDrive Design System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Brand Colors */
+            --brand-blue: #0066FF;
+            --brand-blue-dark: #0052CC;
+            --brand-blue-light: #3385FF;
+
+            /* Neutral Colors */
+            --black: #000000;
+            --gray-900: #1A1A1A;
+            --gray-800: #2D2D2D;
+            --gray-700: #404040;
+            --gray-600: #666666;
+            --gray-500: #808080;
+            --gray-400: #999999;
+            --gray-300: #CCCCCC;
+            --gray-200: #E5E5E5;
+            --gray-100: #F5F5F5;
+            --white: #FFFFFF;
+
+            /* Status Colors */
+            --success: #00C853;
+            --error: #FF3B30;
+            --warning: #FF9500;
+
+            /* Spacing System */
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 16px;
+            --space-4: 24px;
+            --space-5: 32px;
+            --space-6: 48px;
+            --space-7: 64px;
+
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 20px;
+
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+            /* Typography */
+            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', sans-serif;
+
+            /* Animation */
+            --transition-fast: 100ms ease;
+            --transition-base: 150ms ease;
+            --transition-slow: 300ms ease;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--gray-100);
+            padding: var(--space-6);
+            line-height: 1.6;
+            color: var(--gray-900);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: var(--space-6);
+            border-radius: var(--radius-md);
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: var(--space-5);
+            color: var(--black);
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin: var(--space-6) 0 var(--space-4) 0;
+            color: var(--gray-900);
+            border-bottom: 2px solid var(--brand-blue);
+            padding-bottom: var(--space-2);
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: var(--space-4) 0 var(--space-3) 0;
+            color: var(--gray-800);
+        }
+
+        .section {
+            margin-bottom: var(--space-7);
+        }
+
+        /* Color Palette */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: var(--space-3);
+        }
+
+        .color-card {
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .color-swatch {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .color-info {
+            padding: var(--space-3);
+            background: var(--white);
+        }
+
+        .color-name {
+            font-weight: 600;
+            margin-bottom: var(--space-1);
+        }
+
+        .color-value {
+            font-size: 14px;
+            color: var(--gray-600);
+            font-family: monospace;
+        }
+
+        /* Typography */
+        .type-sample {
+            padding: var(--space-4);
+            background: var(--gray-100);
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--space-3);
+        }
+
+        .type-desktop { font-size: 40px; }
+        .type-tablet { font-size: 32px; }
+        .type-mobile { font-size: 28px; }
+
+        .type-h2-desktop { font-size: 28px; }
+        .type-h2-tablet { font-size: 24px; }
+        .type-h2-mobile { font-size: 22px; }
+
+        .type-body-desktop { font-size: 16px; }
+        .type-body-mobile { font-size: 15px; }
+
+        .type-meta {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-top: var(--space-2);
+        }
+
+        /* Spacing System */
+        .spacing-grid {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .spacing-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        .spacing-visual {
+            height: 40px;
+            background: var(--brand-blue);
+            border-radius: var(--radius-sm);
+        }
+
+        .spacing-label {
+            font-weight: 600;
+            width: 120px;
+        }
+
+        /* Buttons */
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-4);
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: var(--radius-sm);
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--brand-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--brand-blue-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--gray-300);
+            color: var(--gray-800);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--brand-blue);
+            color: var(--brand-blue);
+        }
+
+        .btn-large {
+            padding: 16px 32px;
+            font-size: 18px;
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        /* Cards */
+        .card-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-4);
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: var(--space-4);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-base);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            background: var(--gray-200);
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--space-3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: var(--space-2);
+            color: var(--gray-900);
+        }
+
+        .card-text {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: var(--space-4);
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: var(--space-2);
+            color: var(--gray-800);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-sm);
+            font-size: 16px;
+            font-family: var(--font-family);
+            transition: all var(--transition-base);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--brand-blue);
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+        }
+
+        .form-input.error {
+            border-color: var(--error);
+        }
+
+        .form-error {
+            color: var(--error);
+            font-size: 14px;
+            margin-top: var(--space-1);
+        }
+
+        .form-success {
+            color: var(--success);
+            font-size: 14px;
+            margin-top: var(--space-1);
+        }
+
+        /* Status Messages */
+        .alert {
+            padding: var(--space-3) var(--space-4);
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--space-3);
+        }
+
+        .alert-success {
+            background: #E8F5E9;
+            color: #2E7D32;
+            border-left: 4px solid var(--success);
+        }
+
+        .alert-error {
+            background: #FFEBEE;
+            color: #C62828;
+            border-left: 4px solid var(--error);
+        }
+
+        .alert-warning {
+            background: #FFF3E0;
+            color: #E65100;
+            border-left: 4px solid var(--warning);
+        }
+
+        /* Responsive Grid Examples */
+        .grid-desktop {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-4);
+            margin-bottom: var(--space-4);
+        }
+
+        .grid-item {
+            background: var(--gray-200);
+            padding: var(--space-4);
+            border-radius: var(--radius-sm);
+            text-align: center;
+            color: var(--gray-700);
+        }
+
+        @media (max-width: 1279px) {
+            .grid-desktop {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .grid-desktop {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding: var(--space-3);
+            }
+
+            .container {
+                padding: var(--space-4);
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TechDrive Design System</h1>
+        <p style="font-size: 18px; color: var(--gray-600); margin-bottom: var(--space-6);">
+            科技車載品牌官網設計系統 — 簡潔、現代、國際化
+        </p>
+
+        <!-- Color Palette -->
+        <div class="section">
+            <h2>1. Color Palette 色彩系統</h2>
+
+            <h3>Brand Colors 品牌色</h3>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--brand-blue);">Primary</div>
+                    <div class="color-info">
+                        <div class="color-name">Brand Blue</div>
+                        <div class="color-value">#0066FF</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--brand-blue-dark);">Dark</div>
+                    <div class="color-info">
+                        <div class="color-name">Blue Dark</div>
+                        <div class="color-value">#0052CC</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--brand-blue-light);">Light</div>
+                    <div class="color-info">
+                        <div class="color-name">Blue Light</div>
+                        <div class="color-value">#3385FF</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Neutral Colors 中性色</h3>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--black);">Black</div>
+                    <div class="color-info">
+                        <div class="color-name">Black</div>
+                        <div class="color-value">#000000</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--gray-900);">900</div>
+                    <div class="color-info">
+                        <div class="color-name">Gray 900</div>
+                        <div class="color-value">#1A1A1A</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--gray-700);">700</div>
+                    <div class="color-info">
+                        <div class="color-name">Gray 700</div>
+                        <div class="color-value">#404040</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--gray-500);">500</div>
+                    <div class="color-info">
+                        <div class="color-name">Gray 500</div>
+                        <div class="color-value">#808080</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--gray-300); color: var(--gray-700);">300</div>
+                    <div class="color-info">
+                        <div class="color-name">Gray 300</div>
+                        <div class="color-value">#CCCCCC</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--gray-100); color: var(--gray-700);">100</div>
+                    <div class="color-info">
+                        <div class="color-name">Gray 100</div>
+                        <div class="color-value">#F5F5F5</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--white); color: var(--gray-700); border: 1px solid var(--gray-300);">White</div>
+                    <div class="color-info">
+                        <div class="color-name">White</div>
+                        <div class="color-value">#FFFFFF</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Status Colors 狀態色</h3>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--success);">Success</div>
+                    <div class="color-info">
+                        <div class="color-name">Success</div>
+                        <div class="color-value">#00C853</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--error);">Error</div>
+                    <div class="color-info">
+                        <div class="color-name">Error</div>
+                        <div class="color-value">#FF3B30</div>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch" style="background: var(--warning);">Warning</div>
+                    <div class="color-info">
+                        <div class="color-name">Warning</div>
+                        <div class="color-value">#FF9500</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typography -->
+        <div class="section">
+            <h2>2. Typography 字級系統</h2>
+
+            <h3>H1 - Main Headlines</h3>
+            <div class="type-sample">
+                <div class="type-desktop" style="font-weight: 700;">智能車載 科技領航</div>
+                <div class="type-meta">Desktop: 40px / Tablet: 32px / Mobile: 28px | Weight: 700</div>
+            </div>
+
+            <h3>H2 - Section Titles</h3>
+            <div class="type-sample">
+                <div class="type-h2-desktop" style="font-weight: 600;">核心技術優勢</div>
+                <div class="type-meta">Desktop: 28px / Tablet: 24px / Mobile: 22px | Weight: 600</div>
+            </div>
+
+            <h3>H3 - Card Titles</h3>
+            <div class="type-sample">
+                <div style="font-size: 20px; font-weight: 600;">Smart Connect 智能連接</div>
+                <div class="type-meta">20px | Weight: 600</div>
+            </div>
+
+            <h3>Body Text</h3>
+            <div class="type-sample">
+                <div class="type-body-desktop">
+                    TechDrive 專注於智能車載系統研發，為全球車主提供安全、可靠、創新的科技解決方案。
+                    我們的產品結合最新的 IoT 技術與車載應用，打造無縫的智能駕駛體驗。
+                </div>
+                <div class="type-meta">Desktop: 16px / Mobile: 15px | Weight: 400 | Line-height: 1.6</div>
+            </div>
+        </div>
+
+        <!-- Spacing System -->
+        <div class="section">
+            <h2>3. Spacing System 間距系統</h2>
+            <div class="spacing-grid">
+                <div class="spacing-item">
+                    <span class="spacing-label">--space-1</span>
+                    <div class="spacing-visual" style="width: 4px;"></div>
+                    <span>4px</span>
+                </div>
+                <div class="spacing-item">
+                    <span class="spacing-label">--space-2</span>
+                    <div class="spacing-visual" style="width: 8px;"></div>
+                    <span>8px</span>
+                </div>
+                <div class="spacing-item">
+                    <span class="spacing-label">--space-3</span>
+                    <div class="spacing-visual" style="width: 16px;"></div>
+                    <span>16px</span>
+                </div>
+                <div class="spacing-item">
+                    <span class="spacing-label">--space-4</span>
+                    <div class="spacing-visual" style="width: 24px;"></div>
+                    <span>24px</span>
+                </div>
+                <div class="spacing-item">
+                    <span class="spacing-label">--space-5</span>
+                    <div class="spacing-visual" style="width: 32px;"></div>
+                    <span>32px</span>
+                </div>
+                <div class="spacing-item">
+                    <span class="spacing-label">--space-6</span>
+                    <div class="spacing-visual" style="width: 48px;"></div>
+                    <span>48px</span>
+                </div>
+                <div class="spacing-item">
+                    <span class="spacing-label">--space-7</span>
+                    <div class="spacing-visual" style="width: 64px;"></div>
+                    <span>64px</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="section">
+            <h2>4. Buttons 按鈕</h2>
+
+            <h3>Primary Buttons</h3>
+            <div class="button-grid">
+                <button class="btn btn-primary btn-large">Large Primary</button>
+                <button class="btn btn-primary">Default Primary</button>
+                <button class="btn btn-primary btn-small">Small Primary</button>
+            </div>
+
+            <h3>Secondary Buttons</h3>
+            <div class="button-grid">
+                <button class="btn btn-secondary btn-large">Large Secondary</button>
+                <button class="btn btn-secondary">Default Secondary</button>
+                <button class="btn btn-secondary btn-small">Small Secondary</button>
+            </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="section">
+            <h2>5. Cards 卡片</h2>
+            <div class="card-examples">
+                <div class="card">
+                    <div class="card-image">800 × 600</div>
+                    <div class="card-title">產品卡片範例</div>
+                    <div class="card-text">
+                        卡片具備柔和陰影與 16-20px 圓角，Hover 時會有向上位移與陰影加深效果。
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">800 × 600</div>
+                    <div class="card-title">技術卡片範例</div>
+                    <div class="card-text">
+                        適用於展示核心技術、產品特色、新聞資訊等內容區塊。
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">800 × 600</div>
+                    <div class="card-title">資訊卡片範例</div>
+                    <div class="card-text">
+                        保持一致的視覺語言，確保使用者體驗的連貫性。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Elements -->
+        <div class="section">
+            <h2>6. Form Elements 表單元素</h2>
+
+            <div style="max-width: 600px;">
+                <div class="form-group">
+                    <label class="form-label">公司名稱 *</label>
+                    <input type="text" class="form-input" placeholder="請輸入公司名稱">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email 地址 *</label>
+                    <input type="email" class="form-input" placeholder="example@company.com">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Email 地址（錯誤狀態）*</label>
+                    <input type="email" class="form-input error" value="invalid-email">
+                    <div class="form-error">請輸入有效的 Email 地址</div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">訊息內容 *</label>
+                    <textarea class="form-input" rows="4" placeholder="請輸入您的訊息（最多 600 字）"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Messages -->
+        <div class="section">
+            <h2>7. Status Messages 狀態訊息</h2>
+
+            <div class="alert alert-success">
+                ✓ 表單已成功送出！我們會盡快與您聯繫。
+            </div>
+
+            <div class="alert alert-error">
+                ✗ 送出失敗，請檢查您的網路連線並重試。
+            </div>
+
+            <div class="alert alert-warning">
+                ⚠ 留言不可超過 600 字，請精簡您的內容。
+            </div>
+        </div>
+
+        <!-- Responsive Grid -->
+        <div class="section">
+            <h2>8. Responsive Grid 響應式網格</h2>
+            <p style="margin-bottom: var(--space-4); color: var(--gray-600);">
+                桌機（≥1280px）：4欄 | 平板（768-1279px）：2欄 | 手機（≤767px）：1欄
+            </p>
+            <div class="grid-desktop">
+                <div class="grid-item">Grid Item 1</div>
+                <div class="grid-item">Grid Item 2</div>
+                <div class="grid-item">Grid Item 3</div>
+                <div class="grid-item">Grid Item 4</div>
+            </div>
+        </div>
+
+        <!-- Animation Guidelines -->
+        <div class="section">
+            <h2>9. Animation Guidelines 動效指引</h2>
+            <ul style="line-height: 2; color: var(--gray-700);">
+                <li><strong>頁面元素入場</strong>：200-300ms（fade-in + slide-up）</li>
+                <li><strong>滑入動效</strong>：150ms（intersection observer）</li>
+                <li><strong>Hover 動效</strong>：100ms（transform + shadow）</li>
+                <li><strong>按鈕點擊</strong>：100ms（scale down）</li>
+                <li><strong>語言切換</strong>：<300ms（文字替換）</li>
+                <li><strong>動效原則</strong>：保持沉穩，避免過於誇張</li>
+            </ul>
+        </div>
+
+        <!-- Accessibility -->
+        <div class="section">
+            <h2>10. Accessibility 無障礙設計</h2>
+            <ul style="line-height: 2; color: var(--gray-700);">
+                <li><strong>對比度</strong>：符合 WCAG AA 標準（最低 4.5:1）</li>
+                <li><strong>最小字級</strong>：14px</li>
+                <li><strong>焦點樣式</strong>：明確的 2-3px 藍色邊框</li>
+                <li><strong>鍵盤導航</strong>：支援 Tab、Enter、Space 操作</li>
+                <li><strong>圖片替代文字</strong>：所有圖片必須設定 alt 屬性</li>
+                <li><strong>ARIA 屬性</strong>：語言切換、導航選單需設定 ARIA</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
