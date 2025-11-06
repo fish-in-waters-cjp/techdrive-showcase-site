@@ -1,0 +1,58 @@
+[
+  {
+    "id": "r1",
+    "name": "Tech Store Taiwan",
+    "logo": "/assets/retailers/tech-store.svg",
+    "url": "#",
+    "region": "台灣"
+  },
+  {
+    "id": "r2",
+    "name": "AutoParts Direct",
+    "logo": "/assets/retailers/autoparts.svg",
+    "url": "#",
+    "region": "台灣"
+  },
+  {
+    "id": "r3",
+    "name": "CarTech Solutions",
+    "logo": "/assets/retailers/cartech.svg",
+    "url": "#",
+    "region": "亞太"
+  },
+  {
+    "id": "r4",
+    "name": "DriveMax",
+    "logo": "/assets/retailers/drivemax.svg",
+    "url": "#",
+    "region": "亞太"
+  },
+  {
+    "id": "r5",
+    "name": "SmartAuto Hub",
+    "logo": "/assets/retailers/smartauto.svg",
+    "url": "#",
+    "region": "台灣"
+  },
+  {
+    "id": "r6",
+    "name": "VehicleTech Pro",
+    "logo": "/assets/retailers/vehicletech.svg",
+    "url": "#",
+    "region": "全球"
+  },
+  {
+    "id": "r7",
+    "name": "PowerDrive Systems",
+    "logo": "/assets/retailers/powerdrive.svg",
+    "url": "#",
+    "region": "全球"
+  },
+  {
+    "id": "r8",
+    "name": "NextGen Motors",
+    "logo": "/assets/retailers/nextgen.svg",
+    "url": "#",
+    "region": "歐洲"
+  }
+]
