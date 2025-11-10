@@ -1,10 +1,10 @@
 <template>
   <section class="hero-section relative bg-gray-900 text-white overflow-hidden">
-    <!-- Background Image -->
+    <!-- Background Image (使用 picsum.photos 占位圖) -->
     <div class="absolute inset-0">
       <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-gray-900/70 z-10"></div>
       <img
-        src="/assets/hero/hero-bg.jpg"
+        src="https://picsum.photos/1920/1080?random=1"
         alt="TechDrive Hero Background"
         class="w-full h-full object-cover"
         loading="eager"
