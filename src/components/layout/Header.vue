@@ -4,8 +4,12 @@
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center">
-          <a href="/" class="text-2xl font-bold text-gray-900">
-            TechDrive
+          <a href="/" class="flex items-center">
+            <img
+              src="/assets/logo.svg"
+              alt="TechDrive Logo"
+              class="h-10"
+            />
           </a>
         </div>
 

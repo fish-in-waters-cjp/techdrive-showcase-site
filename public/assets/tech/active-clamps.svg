@@ -1,0 +1,16 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Active Clamps Icon: 電池充電 + 閃電 -->
+  <circle cx="32" cy="32" r="30" stroke="#0066CC" stroke-width="2" fill="#E5F0FF"/>
+
+  <!-- 電池外框 -->
+  <rect x="22" y="24" width="20" height="16" rx="2" stroke="#0066CC" stroke-width="2" fill="white"/>
+  <rect x="42" y="29" width="2" height="6" fill="#0066CC"/>
+
+  <!-- 充電閃電 -->
+  <path d="M 32 28 L 29 34 L 32 34 L 30 40 L 35 34 L 32 34 Z" fill="#FDB022" stroke="#F59E0B" stroke-width="1"/>
+
+  <!-- 電量指示 -->
+  <rect x="26" y="28" width="3" height="8" rx="1" fill="#0066CC" opacity="0.8"/>
+  <rect x="31" y="28" width="3" height="8" rx="1" fill="#0066CC" opacity="0.5"/>
+  <rect x="36" y="28" width="3" height="8" rx="1" fill="#E5E7EB" opacity="0.5"/>
+</svg>
