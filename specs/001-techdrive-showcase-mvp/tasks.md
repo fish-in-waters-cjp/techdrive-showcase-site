@@ -271,10 +271,10 @@ Phase 10 (Polish)
 
 ### Offline Mode (無外聯模式)
 
-- [ ] T069a [US6] 建立 `/src/composables/useOfflineMode.js` - 無外聯模式 Composable (檢測是否啟用,移除 Google Fonts/Maps/iFrame,符合 FR-032)
-- [ ] T069b [US6] 更新 Header.vue - 加入「無外聯模式」開關按鈕 (存至 UIStore 或 localStorage)
-- [ ] T069c [US6] 更新 `/index.html` 與其他 HTML - 條件式載入 Google Fonts (依據無外聯模式開關)
-- [ ] T069d [US6] 更新 StaticMapSection.vue - 根據無外聯模式顯示靜態圖或 Google Maps iFrame
+- [X] T069a [US6] 建立 `/src/composables/useOfflineMode.js` - 無外聯模式 Composable (檢測是否啟用,移除 Google Fonts/Maps/iFrame,符合 FR-032)
+- [ ] T069b [US6] 更新 Header.vue - 加入「無外聯模式」開關按鈕 (存至 UIStore 或 localStorage) *[UIStore 已實作,待 UI 整合]*
+- [ ] T069c [US6] 更新 `/index.html` 與其他 HTML - 條件式載入 Google Fonts (依據無外聯模式開關) *[待實作]*
+- [X] T069d [US6] 更新 StaticMapSection.vue - 根據無外聯模式顯示靜態圖或 Google Maps iFrame *[已建立完整組件]*
 
 **Acceptance Criteria**:
 - [ ] AC6-1 [US6] 語言切換下拉選單可切換繁中/英文
@@ -296,7 +296,7 @@ Phase 10 (Polish)
 - [ ] T071 [P] [US3] 建立 `/retail-partner.html` - Retail Partner 頁面 HTML 進入點
 - [ ] T072 [P] [US3] 建立 `/src/pages/contact/main.js` - Contact 頁面入口
 - [ ] T073 [P] [US3] 建立 `/src/pages/contact/App.vue` - Contact 根元件
-- [ ] T073a [P] [US3] 建立 `/src/components/sections/StaticMapSection.vue` - 靜態地圖占位圖區塊 (顯示靜態地圖圖片與「查看地點」按鈕,符合 FR-026~027)
+- [X] T073a [P] [US3] 建立 `/src/components/sections/StaticMapSection.vue` - 靜態地圖占位圖區塊 (顯示靜態地圖圖片與「查看地點」按鈕,符合 FR-026~027)
 - [ ] T074 [P] [US3] 建立 `/src/pages/retail-partner/main.js` - Retail Partner 頁面入口
 - [ ] T075 [P] [US3] 建立 `/src/pages/retail-partner/App.vue` - Retail Partner 根元件
 
@@ -309,9 +309,9 @@ Phase 10 (Polish)
 
 ### Validation & Composables
 
-- [ ] T080 [US3] 建立 `/src/lib/validation-schemas.js` - Yup Validation Schemas (contact, retail-partner)
-- [ ] T080a [US3] 建立 `/src/composables/useFormSubmit.js` - 表單送出 Composable (模擬送出、Loading 狀態、成功/失敗提示,符合 FR-018~020)
-- [ ] T080b [US3] 建立 `/src/components/ui/Toast.vue` - Toast 提示元件 (成功/失敗提示,3 秒後自動關閉或可手動關閉)
+- [X] T080 [US3] 建立 `/src/lib/validation-schemas.js` - Yup Validation Schemas (contact, retail-partner)
+- [X] T080a [US3] 建立 `/src/composables/useFormSubmit.js` - 表單送出 Composable (模擬送出、Loading 狀態、成功/失敗提示,符合 FR-018~020)
+- [X] T080b [US3] 建立 `/src/components/ui/Toast.vue` - Toast 提示元件 (成功/失敗提示,3 秒後自動關閉或可手動關閉)
 
 **Acceptance Criteria**:
 - [ ] AC3-1 [US3] Contact 表單顯示姓名、Email、訊息欄位
