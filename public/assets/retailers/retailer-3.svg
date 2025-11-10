@@ -1,6 +1,11 @@
 <svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="120" height="60" rx="4" fill="#F3F4F6"/>
-  <text x="60" y="35" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#6B7280" text-anchor="middle">
+  <rect width="120" height="60" rx="4" fill="#DC2626"/>
+  <!-- Road/Drive icon -->
+  <path d="M18 32 L22 28 L30 28 L34 32 L30 36 L22 36 Z" fill="#FCA5A5"/>
+  <rect x="23" y="30" width="2" height="4" fill="#DC2626"/>
+  <rect x="27" y="30" width="2" height="4" fill="#DC2626"/>
+  <!-- Text -->
+  <text x="40" y="34" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="white">
     DriveZone
   </text>
 </svg>

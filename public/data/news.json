@@ -6,7 +6,7 @@
     "excerpt": "TechDrive 於美國拉斯維加斯 CES 2025 展會中，展示最新的 Smart Connect 技術與 TD-200 系列產品，吸引眾多國際買家關注。",
     "url": "#",
     "category": "event",
-    "image": "/assets/news/ces2025.jpg"
+    "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&q=80"
   },
   {
     "id": "n2",
@@ -15,7 +15,7 @@
     "excerpt": "TechDrive 研發的 EcoBoost Drive 節能技術獲得 2024 年度綠能創新獎，節能效果較傳統方案提升 40%，樹立業界標竿。",
     "url": "#",
     "category": "press",
-    "image": "/assets/news/award.jpg"
+    "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&q=80"
   },
   {
     "id": "n3",
@@ -24,6 +24,6 @@
     "excerpt": "TechDrive 宣布與多家國際車廠建立戰略合作關係，將 Smart Connect 與 Active Clamps 技術整合至新世代車載系統中。",
     "url": "#",
     "category": "announcement",
-    "image": "/assets/news/partnership.jpg"
+    "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop&q=80"
   }
 ]

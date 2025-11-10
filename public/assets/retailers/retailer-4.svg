@@ -1,6 +1,11 @@
 <svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="120" height="60" rx="4" fill="#F3F4F6"/>
-  <text x="60" y="35" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#6B7280" text-anchor="middle">
+  <rect width="120" height="60" rx="4" fill="#7C3AED"/>
+  <!-- Garage/Tech icon -->
+  <path d="M18 34 L26 26 L34 34" stroke="#C4B5FD" stroke-width="2" fill="none"/>
+  <rect x="22" y="30" width="8" height="6" fill="#C4B5FD"/>
+  <rect x="24" y="32" width="4" height="4" fill="#7C3AED"/>
+  <!-- Text -->
+  <text x="40" y="34" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="white">
     TechGarage
   </text>
 </svg>
