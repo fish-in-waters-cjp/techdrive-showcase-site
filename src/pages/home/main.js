@@ -1,4 +1,19 @@
-import { createVueApp } from '../../main.js'
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import App from './App.vue'
+import { createI18nInstance } from '@/lib/i18n'
+import '@/styles/globals.css'
 
-createVueApp(App).mount('#app')
+// 初始化應用程式
+async function initApp() {
+  const app = createApp(App)
+  const pinia = createPinia()
+  const i18n = await createI18nInstance()
+
+  app.use(pinia)
+  app.use(i18n)
+
+  app.mount('#app')
+}
+
+initApp()
