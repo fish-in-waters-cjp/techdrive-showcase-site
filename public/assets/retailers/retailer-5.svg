@@ -1,0 +1,10 @@
+<svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="60" rx="4" fill="#0891B2"/>
+  <!-- Elite/Premium icon (star + shield) -->
+  <path d="M26 24 L28 28 L32 28 L29 31 L30 35 L26 33 L22 35 L23 31 L20 28 L24 28 Z" fill="#67E8F9"/>
+  <circle cx="26" cy="30" r="7" stroke="#22D3EE" stroke-width="1.5" fill="none"/>
+  <!-- Text -->
+  <text x="38" y="34" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="white">
+    AutoElite
+  </text>
+</svg>

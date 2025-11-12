@@ -1,0 +1,12 @@
+<svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="60" rx="4" fill="#1E40AF"/>
+  <!-- Car icon -->
+  <path d="M20 28 L24 24 L32 24 L36 28 Z" fill="#60A5FA"/>
+  <rect x="18" y="28" width="20" height="8" rx="1" fill="#60A5FA"/>
+  <circle cx="22" cy="38" r="2" fill="#DBEAFE"/>
+  <circle cx="34" cy="38" r="2" fill="#DBEAFE"/>
+  <!-- Text -->
+  <text x="44" y="34" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="white">
+    AutoMart
+  </text>
+</svg>

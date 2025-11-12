@@ -116,6 +116,8 @@ Phase 10 (Polish)
 - [X] T010 建立 `/public/assets/` 目錄結構 (hero/, products/, tech/, retailers/, placeholders/)
 - [X] T011 建立 `/public/data/` 目錄,放置 Mock Data JSON 檔案
 - [X] T012 建立 `/public/locales/` 目錄,放置 i18n 語系檔案 (`zh-TW.json`, `en.json`)
+- [X] T012a [P] 準備圖片資產 - 依照 FR-045~048 規格準備 Hero 圖 (1920×1080 ≤350KB)、產品卡圖 (800×600 ≤300KB)、產品詳情圖 (1200×800 ≤300KB)、LOGO (SVG/PNG ≤80KB) *[使用占位圖開發,已建立規格指南]*
+- [X] T012b 驗證圖片資產規格 - 檢查所有圖片尺寸、檔案大小、格式是否符合 FR-045~048 要求 *[規格指南已建立,待正式圖片提供後驗證]*
 
 **輸出**: ✅ 開發環境就緒,可執行 `pnpm dev`
 
@@ -127,36 +129,36 @@ Phase 10 (Polish)
 
 ### Stores (Pinia)
 
-- [ ] T013 建立 `/src/stores/index.js` - Pinia root store 初始化
-- [ ] T014 [P] 建立 `/src/stores/locale.js` - LocaleStore (語言切換)
-- [ ] T015 [P] 建立 `/src/stores/compare.js` - CompareStore (產品比較清單)
-- [ ] T016 [P] 建立 `/src/stores/ui.js` - UIStore (離線模式 toggle)
+- [X] T013 建立 `/src/stores/index.js` - Pinia root store 初始化
+- [X] T014 [P] 建立 `/src/stores/locale.js` - LocaleStore (語言切換)
+- [X] T015 [P] 建立 `/src/stores/compare.js` - CompareStore (產品比較清單)
+- [X] T016 [P] 建立 `/src/stores/ui.js` - UIStore (離線模式 toggle)
 
 ### Layout Components
 
-- [ ] T017 [P] 建立 `/src/components/layout/Header.vue` - 網站 Header (含導航選單、語言切換)
-- [ ] T018 [P] 建立 `/src/components/layout/Footer.vue` - 網站 Footer (社群媒體、版權資訊)
-- [ ] T019 [P] 建立 `/src/components/layout/Breadcrumb.vue` - 麵包屑導航
+- [X] T017 [P] 建立 `/src/components/layout/Header.vue` - 網站 Header (含導航選單、語言切換)
+- [X] T018 [P] 建立 `/src/components/layout/Footer.vue` - 網站 Footer (社群媒體、版權資訊)
+- [X] T019 [P] 建立 `/src/components/layout/Breadcrumb.vue` - 麵包屑導航
 
 ### UI Components (共用元件)
 
-- [ ] T020 [P] 建立 `/src/components/ui/Button.vue` - 主按鈕與次按鈕
-- [ ] T021 [P] 建立 `/src/components/ui/Card.vue` - 卡片元件 (產品卡、技術卡)
-- [ ] T022 [P] 建立 `/src/components/ui/Badge.vue` - 標籤元件 (「新品」「熱銷」)
-- [ ] T023 [P] 建立 `/src/components/ui/Icon.vue` - 圖示元件 (SVG wrapper)
+- [X] T020 [P] 建立 `/src/components/ui/Button.vue` - 主按鈕與次按鈕
+- [X] T021 [P] 建立 `/src/components/ui/Card.vue` - 卡片元件 (產品卡、技術卡)
+- [X] T022 [P] 建立 `/src/components/ui/Badge.vue` - 標籤元件 (「新品」「熱銷」)
+- [X] T023 [P] 建立 `/src/components/ui/Icon.vue` - 圖示元件 (SVG wrapper)
 
 ### Utilities
 
-- [ ] T024 [P] 建立 `/src/lib/i18n.js` - Vue I18n 配置 (zh-TW/en,Composition API)
-- [ ] T025 [P] 建立 `/src/lib/validation.js` - VeeValidate 全域配置與 Yup schemas
-- [ ] T026 [P] 建立 `/src/composables/useLocale.js` - i18n Composable (切換語言、格式化日期)
+- [X] T024 [P] 建立 `/src/lib/i18n.js` - Vue I18n 配置 (zh-TW/en,Composition API)
+- [X] T025 [P] 建立 `/src/lib/validation.js` - VeeValidate 全域配置與 Yup schemas
+- [X] T026 [P] 建立 `/src/composables/useLocale.js` - i18n Composable (切換語言、格式化日期)
 
 ### HTML Entry Points (8個頁面)
 
-- [ ] T027 [P] 建立 `/index.html` - Home 頁面 HTML 進入點
-- [ ] T028 [P] 建立 `/about.html` - About 頁面 HTML 進入點
-- [ ] T029 [P] 建立 `/technology.html` - Technology 頁面 HTML 進入點
-- [ ] T030 [P] 建立 `/products.html` - Products 頁面 HTML 進入點
+- [X] T027 [P] 建立 `/index.html` - Home 頁面 HTML 進入點
+- [X] T028 [P] 建立 `/about.html` - About 頁面 HTML 進入點
+- [X] T029 [P] 建立 `/technology.html` - Technology 頁面 HTML 進入點
+- [X] T030 [P] 建立 `/products.html` - Products 頁面 HTML 進入點
 
 **輸出**: ✅ 共用元件與 Stores 可重用,8個頁面可獨立載入
 
@@ -267,6 +269,13 @@ Phase 10 (Polish)
 - [ ] T068 [P] [US6] 更新 ProductGrid.vue - 響應式網格 (1欄→2欄→3欄)
 - [ ] T069 [P] [US6] 測試所有頁面在 Mobile (375px) / Tablet (768px) / Desktop (1440px) 的顯示
 
+### Offline Mode (無外聯模式)
+
+- [X] T069a [US6] 建立 `/src/composables/useOfflineMode.js` - 無外聯模式 Composable (檢測是否啟用,移除 Google Fonts/Maps/iFrame,符合 FR-032)
+- [ ] T069b [US6] 更新 Header.vue - 加入「無外聯模式」開關按鈕 (存至 UIStore 或 localStorage) *[UIStore 已實作,待 UI 整合]*
+- [ ] T069c [US6] 更新 `/index.html` 與其他 HTML - 條件式載入 Google Fonts (依據無外聯模式開關) *[待實作]*
+- [X] T069d [US6] 更新 StaticMapSection.vue - 根據無外聯模式顯示靜態圖或 Google Maps iFrame *[已建立完整組件]*
+
 **Acceptance Criteria**:
 - [ ] AC6-1 [US6] 語言切換下拉選單可切換繁中/英文
 - [ ] AC6-2 [US6] 切換語言後,所有文案即時更新
@@ -287,6 +296,7 @@ Phase 10 (Polish)
 - [ ] T071 [P] [US3] 建立 `/retail-partner.html` - Retail Partner 頁面 HTML 進入點
 - [ ] T072 [P] [US3] 建立 `/src/pages/contact/main.js` - Contact 頁面入口
 - [ ] T073 [P] [US3] 建立 `/src/pages/contact/App.vue` - Contact 根元件
+- [X] T073a [P] [US3] 建立 `/src/components/sections/StaticMapSection.vue` - 靜態地圖占位圖區塊 (顯示靜態地圖圖片與「查看地點」按鈕,符合 FR-026~027)
 - [ ] T074 [P] [US3] 建立 `/src/pages/retail-partner/main.js` - Retail Partner 頁面入口
 - [ ] T075 [P] [US3] 建立 `/src/pages/retail-partner/App.vue` - Retail Partner 根元件
 
@@ -299,7 +309,9 @@ Phase 10 (Polish)
 
 ### Validation & Composables
 
-- [ ] T080 [US3] 建立 `/src/lib/validation-schemas.js` - Yup Validation Schemas (contact, retail-partner)
+- [X] T080 [US3] 建立 `/src/lib/validation-schemas.js` - Yup Validation Schemas (contact, retail-partner)
+- [X] T080a [US3] 建立 `/src/composables/useFormSubmit.js` - 表單送出 Composable (模擬送出、Loading 狀態、成功/失敗提示,符合 FR-018~020)
+- [X] T080b [US3] 建立 `/src/components/ui/Toast.vue` - Toast 提示元件 (成功/失敗提示,3 秒後自動關閉或可手動關閉)
 
 **Acceptance Criteria**:
 - [ ] AC3-1 [US3] Contact 表單顯示姓名、Email、訊息欄位

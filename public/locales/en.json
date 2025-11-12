@@ -1,0 +1,154 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "technology": "Technology",
+    "products": "Products",
+    "retailPartner": "Partners",
+    "mediaNews": "Media & News",
+    "support": "Support",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Smart Driving Starts Here",
+    "subtitle": "Driving Next-Gen In-Vehicle Experience with Patented Technology",
+    "cta": {
+      "primary": "Explore Products",
+      "secondary": "Learn More"
+    }
+  },
+  "coreTech": {
+    "title": "Three Core Technologies",
+    "subtitle": "Innovation Drives Excellence",
+    "learnMore": "Learn More"
+  },
+  "featuredProducts": {
+    "title": "Featured Products",
+    "subtitle": "Carefully Selected High-Quality In-Vehicle Solutions",
+    "viewAll": "View All Products"
+  },
+  "retailers": {
+    "title": "Global Partners",
+    "subtitle": "Partnering with Leading Brands Worldwide",
+    "becomePartner": "Become a Partner"
+  },
+  "about": {
+    "title": "About TechDrive",
+    "subtitle": "Leading Innovation in Vehicle Technology",
+    "history": {
+      "title": "Company History",
+      "milestone1": {
+        "title": "Company Founded",
+        "description": "TechDrive established in Taiwan, focusing on in-vehicle electronics R&D"
+      },
+      "milestone2": {
+        "title": "Smart Connect Launch",
+        "description": "Released revolutionary Smart Connect technology, highly acclaimed by the industry"
+      },
+      "milestone3": {
+        "title": "Global Expansion",
+        "description": "Expanded into Asia-Pacific markets, established global distribution network"
+      },
+      "milestone4": {
+        "title": "Active Clamps Innovation",
+        "description": "Launched Active Clamps protection technology, enhancing product safety"
+      },
+      "milestone5": {
+        "title": "Sustainability Initiative",
+        "description": "Initiated EcoBoost Drive energy-saving program, achieving green environmental goals"
+      }
+    },
+    "values": {
+      "title": "Core Values",
+      "subtitle": "Leading Innovation, Pursuing Excellence",
+      "value1": {
+        "title": "Quality Assurance",
+        "description": "Strictly controlling every aspect to provide the most reliable in-vehicle solutions"
+      },
+      "value2": {
+        "title": "Innovation R&D",
+        "description": "Continuously investing in technology development, leading new trends in vehicle technology"
+      },
+      "value3": {
+        "title": "Customer First",
+        "description": "Listening to customer needs, providing the best product experience and after-sales service"
+      }
+    }
+  },
+  "technology": {
+    "title": "Core Technology",
+    "subtitle": "Three Patented Technologies Driving Industry Innovation",
+    "benefits": "Technical Advantages"
+  },
+  "products": {
+    "title": "Product Catalog",
+    "subtitle": "Explore Our Complete In-Vehicle Solutions",
+    "showing": "Showing {count} products",
+    "viewDetails": "View Details",
+    "inquire": "Product Inquiry",
+    "backToList": "Back to Product List",
+    "notFound": "Product not found",
+    "noResults": "No products match the criteria",
+    "highlights": "Product Highlights",
+    "specifications": "Technical Specifications",
+    "downloads": "Download Resources",
+    "badge": {
+      "featured": "Featured",
+      "new": "New"
+    },
+    "filter": {
+      "title": "Filters",
+      "category": "Category",
+      "all": "All Products",
+      "reset": "Reset Filters"
+    },
+    "compare": {
+      "title": "Compare Products",
+      "add": "Add to Compare",
+      "remove": "Remove from Compare",
+      "view": "View Comparison",
+      "clear": "Clear All",
+      "limitReached": "You can compare up to 3 products"
+    }
+  },
+  "footer": {
+    "tagline": "Smart Driving Starts with TechDrive",
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "followUs": "Follow Us",
+    "allRightsReserved": "All Rights Reserved"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "close": "Close",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "more": "More",
+    "less": "Less"
+  },
+  "validation": {
+    "required": "{field} is required",
+    "email": "{field} format is invalid",
+    "min": "{field} must be at least {min} characters",
+    "max": "{field} must be at most {max} characters",
+    "confirmed": "{field} does not match",
+    "invalid": "{field} is invalid"
+  },
+  "fields": {
+    "name": "Name",
+    "company": "Company",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "subject": "Subject"
+  }
+}

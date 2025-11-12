@@ -1,0 +1,156 @@
+[
+  {
+    "id": "TD-100",
+    "name": "TD-100",
+    "slug": "td-100",
+    "thumbnail": "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=800&h=600&fit=crop&q=80",
+    "image": "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=1200&h=800&fit=crop&q=80",
+    "highlights": ["低延遲連接", "車規級溫度範圍", "多裝置連線"],
+    "description": "專為車載環境設計的高效能主控單元，支援 CAN 與 USB-C 連接，提供穩定可靠的車載通訊解決方案。",
+    "specs": [
+      { "label": "尺寸", "value": "120×60×15 mm" },
+      { "label": "重量", "value": "180g" },
+      { "label": "處理器", "value": "ARM Cortex-A53 Quad-core" },
+      { "label": "記憶體", "value": "4GB DDR4" },
+      { "label": "儲存空間", "value": "32GB eMMC" },
+      { "label": "輸入/輸出", "value": "USB-C, CAN 2.0, UART" },
+      { "label": "工作溫度", "value": "-40°C ~ 85°C" },
+      { "label": "工作電壓", "value": "12V DC (9V-16V)" },
+      { "label": "功耗", "value": "最大 15W" },
+      { "label": "認證", "value": "CE, FCC, RoHS" }
+    ],
+    "downloads": [
+      { "name": "產品手冊", "url": "/dl/td100-manual.pdf", "type": "manual" },
+      { "name": "技術規格書", "url": "/dl/td100-datasheet.pdf", "type": "datasheet" }
+    ],
+    "category": "主控單元",
+    "featured": true
+  },
+  {
+    "id": "TD-200",
+    "name": "TD-200",
+    "slug": "td-200",
+    "thumbnail": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&q=80",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop&q=80",
+    "highlights": ["高精度感測", "即時監控", "低功耗設計"],
+    "description": "智慧型車載感測器，提供即時環境監控與精準數據採集，適用於各種車載應用場景。",
+    "specs": [
+      { "label": "尺寸", "value": "50×50×20 mm" },
+      { "label": "重量", "value": "85g" },
+      { "label": "感測類型", "value": "溫度、濕度、壓力" },
+      { "label": "精度", "value": "±0.5°C / ±3%RH / ±1hPa" },
+      { "label": "量測範圍", "value": "-40~125°C / 0~100%RH / 300~1100hPa" },
+      { "label": "更新頻率", "value": "1Hz ~ 100Hz" },
+      { "label": "介面", "value": "I2C, SPI" },
+      { "label": "工作溫度", "value": "-40°C ~ 85°C" },
+      { "label": "工作電壓", "value": "3.3V ~ 5V DC" },
+      { "label": "功耗", "value": "最大 2W" }
+    ],
+    "downloads": [
+      { "name": "使用說明", "url": "/dl/td200-guide.pdf", "type": "manual" }
+    ],
+    "category": "感測器",
+    "featured": true
+  },
+  {
+    "id": "TD-300",
+    "name": "TD-300",
+    "slug": "td-300",
+    "thumbnail": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&h=600&fit=crop&q=80",
+    "image": "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200&h=800&fit=crop&q=80",
+    "highlights": ["高解析度顯示", "觸控操作", "寬視角"],
+    "description": "7 吋車載顯示模組，支援多點觸控與高亮度顯示，提供絕佳的使用者體驗。",
+    "specs": [
+      { "label": "螢幕尺寸", "value": "7 吋 TFT LCD" },
+      { "label": "解析度", "value": "1280×720 (HD)" },
+      { "label": "亮度", "value": "1000 cd/m²" },
+      { "label": "對比度", "value": "1000:1" },
+      { "label": "視角", "value": "178° (H/V)" },
+      { "label": "觸控", "value": "10 點電容式觸控" },
+      { "label": "介面", "value": "HDMI, USB" },
+      { "label": "工作溫度", "value": "-20°C ~ 70°C" },
+      { "label": "工作電壓", "value": "12V DC" },
+      { "label": "功耗", "value": "最大 10W" }
+    ],
+    "downloads": [
+      { "name": "安裝指南", "url": "/dl/td300-install.pdf", "type": "manual" }
+    ],
+    "category": "顯示模組",
+    "featured": true
+  },
+  {
+    "id": "TD-400",
+    "name": "TD-400",
+    "slug": "td-400",
+    "thumbnail": "https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?w=800&h=600&fit=crop&q=80",
+    "image": "https://images.unsplash.com/photo-1625527575307-616f0bb84ad2?w=1200&h=800&fit=crop&q=80",
+    "highlights": ["穩定供電", "過載保護", "高效轉換"],
+    "description": "車載電源管理模組，提供穩定可靠的電源供應與完善的保護機制。",
+    "specs": [
+      { "label": "輸入電壓", "value": "9V ~ 36V DC" },
+      { "label": "輸出電壓", "value": "5V / 12V DC" },
+      { "label": "最大輸出電流", "value": "5A / 3A" },
+      { "label": "轉換效率", "value": "> 90%" },
+      { "label": "保護功能", "value": "過壓、欠壓、過流、短路" },
+      { "label": "工作溫度", "value": "-40°C ~ 85°C" },
+      { "label": "尺寸", "value": "80×50×25 mm" },
+      { "label": "重量", "value": "120g" },
+      { "label": "認證", "value": "CE, RoHS" }
+    ],
+    "downloads": [
+      { "name": "規格書", "url": "/dl/td400-spec.pdf", "type": "datasheet" }
+    ],
+    "category": "電源管理",
+    "featured": false
+  },
+  {
+    "id": "TD-500",
+    "name": "TD-500",
+    "slug": "td-500",
+    "thumbnail": "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=800&h=600&fit=crop&q=80",
+    "image": "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=1200&h=800&fit=crop&q=80",
+    "highlights": ["4G LTE", "GPS 定位", "遠端管理"],
+    "description": "車載通訊模組，整合 4G LTE 與 GPS 功能，支援遠端監控與管理。",
+    "specs": [
+      { "label": "通訊", "value": "4G LTE Cat-4" },
+      { "label": "GPS", "value": "GPS/GLONASS/BeiDou" },
+      { "label": "定位精度", "value": "< 2.5m CEP" },
+      { "label": "天線", "value": "內建陶瓷天線" },
+      { "label": "SIM卡", "value": "Nano SIM" },
+      { "label": "介面", "value": "USB, UART" },
+      { "label": "工作溫度", "value": "-30°C ~ 75°C" },
+      { "label": "工作電壓", "value": "5V DC" },
+      { "label": "功耗", "value": "最大 3W" }
+    ],
+    "downloads": [
+      { "name": "使用手冊", "url": "/dl/td500-manual.pdf", "type": "manual" }
+    ],
+    "category": "通訊模組",
+    "featured": false
+  },
+  {
+    "id": "TD-600",
+    "name": "TD-600",
+    "slug": "td-600",
+    "thumbnail": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&h=600&fit=crop&q=80",
+    "image": "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1200&h=800&fit=crop&q=80",
+    "highlights": ["AI 影像辨識", "ADAS 支援", "雙鏡頭"],
+    "description": "智慧車載攝影機，支援 AI 影像辨識與 ADAS 功能，提升行車安全。",
+    "specs": [
+      { "label": "解析度", "value": "1920×1080 Full HD" },
+      { "label": "幀率", "value": "30fps" },
+      { "label": "鏡頭", "value": "前後雙鏡頭" },
+      { "label": "視角", "value": "140° 廣角" },
+      { "label": "AI 功能", "value": "車道偏移、碰撞預警" },
+      { "label": "夜視", "value": "支援" },
+      { "label": "儲存", "value": "microSD (最大 256GB)" },
+      { "label": "工作溫度", "value": "-20°C ~ 70°C" },
+      { "label": "工作電壓", "value": "12V DC" }
+    ],
+    "downloads": [
+      { "name": "快速指南", "url": "/dl/td600-quickguide.pdf", "type": "manual" }
+    ],
+    "category": "影像系統",
+    "featured": false
+  }
+]

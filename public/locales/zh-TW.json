@@ -1,0 +1,186 @@
+{
+  "nav": {
+    "home": "首頁",
+    "about": "關於我們",
+    "technology": "核心技術",
+    "products": "產品",
+    "retailPartner": "合作夥伴",
+    "mediaNews": "媒體與新聞",
+    "support": "客戶支援",
+    "contact": "聯絡我們",
+    "language": "語言"
+  },
+  "hero": {
+    "title": "Smart Driving Starts Here",
+    "subtitle": "以專利技術驅動新一代車載體驗",
+    "cta": {
+      "primary": "探索產品",
+      "secondary": "了解更多"
+    }
+  },
+  "coreTech": {
+    "title": "三大核心技術",
+    "subtitle": "創新技術驅動卓越效能",
+    "learnMore": "了解更多"
+  },
+  "featuredProducts": {
+    "title": "精選產品",
+    "subtitle": "嚴選高品質車載解決方案",
+    "viewAll": "查看所有產品"
+  },
+  "retailers": {
+    "title": "全球合作夥伴",
+    "subtitle": "與全球領先品牌攜手合作",
+    "becomePartner": "成為合作夥伴"
+  },
+  "about": {
+    "title": "關於 TechDrive",
+    "subtitle": "創新車載技術的領導品牌",
+    "history": {
+      "title": "企業沿革",
+      "milestone1": { "title": "創立公司", "description": "TechDrive 於台灣成立，專注於車載電子技術研發" },
+      "milestone2": { "title": "Smart Connect 問世", "description": "推出革命性的 Smart Connect 技術，獲得業界高度評價" },
+      "milestone3": { "title": "國際化布局", "description": "進軍亞太市場，建立全球經銷網絡" },
+      "milestone4": { "title": "Active Clamps 創新", "description": "推出 Active Clamps 主動保護技術，提升產品安全性" },
+      "milestone5": { "title": "永續發展", "description": "啟動 EcoBoost Drive 節能計畫，實現綠色環保目標" }
+    },
+    "values": {
+      "title": "核心價值",
+      "subtitle": "引領創新，追求卓越",
+      "value1": { "title": "品質保證", "description": "嚴格把關每個環節，提供最可靠的車載解決方案" },
+      "value2": { "title": "創新研發", "description": "持續投入技術研發，引領車載科技新趨勢" },
+      "value3": { "title": "客戶至上", "description": "傾聽客戶需求，提供最佳的產品體驗與售後服務" }
+    }
+  },
+  "technology": {
+    "title": "核心技術",
+    "subtitle": "三大專利技術驅動產業革新",
+    "benefits": "技術優勢"
+  },
+  "products": {
+    "title": "產品目錄",
+    "subtitle": "探索我們的完整車載解決方案",
+    "showing": "顯示 {count} 項產品",
+    "viewDetails": "查看詳情",
+    "inquire": "產品詢價",
+    "backToList": "返回產品列表",
+    "notFound": "找不到該產品",
+    "noResults": "沒有符合條件的產品",
+    "highlights": "產品亮點",
+    "specifications": "技術規格",
+    "downloads": "下載資源",
+    "badge": { "featured": "精選", "new": "新品" },
+    "filter": { "title": "篩選條件", "category": "產品類別", "all": "全部產品", "reset": "重置篩選" },
+    "compare": {
+      "title": "比較產品",
+      "add": "加入比較",
+      "remove": "移除比較",
+      "view": "查看比較",
+      "clear": "清除全部",
+      "limitReached": "最多只能比較 3 個產品"
+    }
+  },
+  "contact": {
+    "title": "聯絡我們",
+    "subtitle": "我們很樂意聽取您的意見與建議",
+    "email": "電子郵件",
+    "phone": "電話",
+    "hours": "服務時間",
+    "form": {
+      "title": "聯絡表單",
+      "submit": "送出訊息",
+      "reset": "重置表單",
+      "success": "感謝您的訊息！我們會盡快與您聯繫。",
+      "error": "送出失敗，請稍後再試。"
+    }
+  },
+  "retailPartner": {
+    "title": "成為合作夥伴",
+    "subtitle": "攜手共創雙贏",
+    "benefits": {
+      "title": "合作優勢",
+      "subtitle": "加入 TechDrive 經銷網絡，享受多重優惠",
+      "profit": { "title": "優渥獲利", "description": "具競爭力的經銷價格與獎勵制度" },
+      "support": { "title": "全方位支援", "description": "技術培訓、行銷素材、售後服務協助" },
+      "marketing": { "title": "行銷資源", "description": "品牌行銷支援與共同市場推廣" }
+    },
+    "form": {
+      "title": "合作申請",
+      "subtitle": "填寫表單，我們會盡快與您聯繫",
+      "submit": "送出申請",
+      "reset": "重置表單",
+      "success": "感謝您的申請！我們會盡快與您聯繫。",
+      "error": "送出失敗，請稍後再試。"
+    }
+  },
+  "mediaNews": {
+    "title": "媒體與新聞",
+    "subtitle": "掌握 TechDrive 最新動態",
+    "readMore": "閱讀更多",
+    "noNews": "目前沒有新聞",
+    "category": {
+      "press": "媒體報導",
+      "event": "活動消息",
+      "announcement": "公司公告"
+    }
+  },
+  "support": {
+    "title": "客戶支援",
+    "subtitle": "我們隨時為您提供協助",
+    "faq": {
+      "title": "常見問題",
+      "subtitle": "快速找到您需要的答案"
+    },
+    "contact": {
+      "title": "聯絡支援團隊",
+      "subtitle": "找不到答案？直接與我們聯繫",
+      "email": "電子郵件支援",
+      "emailHours": "24 小時內回覆",
+      "phone": "電話支援",
+      "phoneHours": "週一至週五 09:00-18:00",
+      "button": "聯絡我們"
+    }
+  },
+  "footer": {
+    "tagline": "智慧車載，從 TechDrive 開始",
+    "quickLinks": "快速連結",
+    "support": "支援",
+    "followUs": "關注我們",
+    "allRightsReserved": "版權所有"
+  },
+  "common": {
+    "loading": "載入中...",
+    "error": "發生錯誤",
+    "retry": "重試",
+    "close": "關閉",
+    "cancel": "取消",
+    "confirm": "確認",
+    "save": "儲存",
+    "delete": "刪除",
+    "edit": "編輯",
+    "search": "搜尋",
+    "filter": "篩選",
+    "sort": "排序",
+    "more": "更多",
+    "less": "收起"
+  },
+  "validation": {
+    "required": "{field} 為必填",
+    "email": "{field} 格式不正確",
+    "min": "{field} 至少需要 {min} 個字元",
+    "max": "{field} 最多 {max} 個字元",
+    "confirmed": "{field} 不符合",
+    "invalid": "{field} 無效"
+  },
+  "fields": {
+    "name": "姓名",
+    "company": "公司名稱",
+    "companyName": "公司名稱",
+    "email": "電子郵件",
+    "phone": "電話",
+    "message": "訊息",
+    "subject": "主旨",
+    "region": "地區",
+    "contactPerson": "聯絡人"
+  }
+}

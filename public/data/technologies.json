@@ -1,0 +1,41 @@
+[
+  {
+    "key": "smart_connect",
+    "title": "Smart Connect",
+    "summary": "低延遲連接，快速穩定",
+    "description": "採用專利的自適應連接技術，確保車載裝置間的資料傳輸低延遲、高穩定。即使在高速移動與訊號干擾環境下，仍能維持穩定連線。",
+    "icon": "/assets/tech/smart-connect.svg",
+    "benefits": [
+      "連線延遲低於 10ms",
+      "抗干擾能力強",
+      "支援多裝置同時連線",
+      "自動恢復斷線"
+    ]
+  },
+  {
+    "key": "active_clamps",
+    "title": "Active Clamps",
+    "summary": "智慧防護，安全第一",
+    "description": "創新的主動式保護機制，即時監控電流與電壓異常，自動啟動保護模式，避免設備損壞與安全風險。",
+    "icon": "/assets/tech/active-clamps.svg",
+    "benefits": [
+      "即時電流監控",
+      "過壓/過流保護",
+      "短路自動斷電",
+      "延長設備壽命 30%"
+    ]
+  },
+  {
+    "key": "ecoboost_drive",
+    "title": "EcoBoost Drive",
+    "summary": "節能高效，綠色環保",
+    "description": "透過智慧能源管理演算法，動態調整功耗，在保持高效能的同時降低能源消耗，符合綠色環保標準。",
+    "icon": "/assets/tech/ecoboost-drive.svg",
+    "benefits": [
+      "節能達 40%",
+      "智慧功耗調整",
+      "低熱量產生",
+      "符合 RoHS 環保標準"
+    ]
+  }
+]

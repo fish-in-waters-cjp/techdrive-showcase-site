@@ -1,0 +1,36 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo Icon: 科技感的方向盤 + 電路圖案 -->
+  <g id="logo-icon">
+    <!-- 外圓 -->
+    <circle cx="30" cy="30" r="24" stroke="#0066CC" stroke-width="2" fill="none"/>
+
+    <!-- 方向盤幅條 -->
+    <line x1="30" y1="6" x2="30" y2="18" stroke="#0066CC" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="30" y1="42" x2="30" y2="54" stroke="#0066CC" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="6" y1="30" x2="18" y2="30" stroke="#0066CC" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="42" y1="30" x2="54" y2="30" stroke="#0066CC" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- 中心圓 -->
+    <circle cx="30" cy="30" r="8" fill="#0066CC"/>
+
+    <!-- 電路線條 (科技感) -->
+    <path d="M 22 30 L 18 30 L 18 26" stroke="#0066CC" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <circle cx="18" cy="26" r="1.5" fill="#0066CC"/>
+
+    <path d="M 38 30 L 42 30 L 42 34" stroke="#0066CC" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <circle cx="42" cy="34" r="1.5" fill="#0066CC"/>
+  </g>
+
+  <!-- Text: TechDrive -->
+  <g id="logo-text">
+    <text x="65" y="25" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1F2937">
+      Tech
+    </text>
+    <text x="115" y="25" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#0066CC">
+      Drive
+    </text>
+    <text x="65" y="42" font-family="Arial, sans-serif" font-size="10" font-weight="400" fill="#6B7280" letter-spacing="2">
+      AUTOMOTIVE TECH
+    </text>
+  </g>
+</svg>

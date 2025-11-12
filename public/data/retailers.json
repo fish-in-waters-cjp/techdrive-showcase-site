@@ -1,0 +1,44 @@
+[
+  {
+    "id": "r1",
+    "name": "AutoMart",
+    "logo": "/assets/retailers/retailer-1.svg",
+    "url": "#",
+    "region": "台灣"
+  },
+  {
+    "id": "r2",
+    "name": "CarTech Pro",
+    "logo": "/assets/retailers/retailer-2.svg",
+    "url": "#",
+    "region": "台灣"
+  },
+  {
+    "id": "r3",
+    "name": "DriveZone",
+    "logo": "/assets/retailers/retailer-3.svg",
+    "url": "#",
+    "region": "亞太"
+  },
+  {
+    "id": "r4",
+    "name": "TechGarage",
+    "logo": "/assets/retailers/retailer-4.svg",
+    "url": "#",
+    "region": "亞太"
+  },
+  {
+    "id": "r5",
+    "name": "AutoElite",
+    "logo": "/assets/retailers/retailer-5.svg",
+    "url": "#",
+    "region": "台灣"
+  },
+  {
+    "id": "r6",
+    "name": "SmartCar Plus",
+    "logo": "/assets/retailers/retailer-6.svg",
+    "url": "#",
+    "region": "全球"
+  }
+]
