@@ -14,10 +14,10 @@
         <div>
           <h4 class="font-semibold mb-4">{{ $t('footer.quickLinks') }}</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="/about.html" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.about') }}</a></li>
-            <li><a href="/technology.html" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.technology') }}</a></li>
-            <li><a href="/products.html" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.products') }}</a></li>
-            <li><a href="/retail-partner.html" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.retailPartner') }}</a></li>
+            <li><a :href="getUrl('about.html')" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.about') }}</a></li>
+            <li><a :href="getUrl('technology.html')" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.technology') }}</a></li>
+            <li><a :href="getUrl('products.html')" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.products') }}</a></li>
+            <li><a :href="getUrl('retail-partner.html')" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.retailPartner') }}</a></li>
           </ul>
         </div>
 
@@ -25,9 +25,9 @@
         <div>
           <h4 class="font-semibold mb-4">{{ $t('footer.support') }}</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="/support.html" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.support') }}</a></li>
-            <li><a href="/contact.html" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.contact') }}</a></li>
-            <li><a href="/media-news.html" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.mediaNews') }}</a></li>
+            <li><a :href="getUrl('support.html')" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.support') }}</a></li>
+            <li><a :href="getUrl('contact.html')" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.contact') }}</a></li>
+            <li><a :href="getUrl('media-news.html')" class="text-gray-400 hover:text-white transition-colors">{{ $t('nav.mediaNews') }}</a></li>
           </ul>
         </div>
 
@@ -64,6 +64,8 @@
 
 <script setup>
 import { useI18n } from 'vue-i18n'
+import { useBasePath } from '@/composables/useBasePath'
 
 const { t } = useI18n()
+const { getUrl } = useBasePath()
 </script>
