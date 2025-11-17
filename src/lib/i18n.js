@@ -4,10 +4,11 @@ import { createI18n } from 'vue-i18n'
 async function loadLocaleMessages() {
   const locales = ['zh-TW', 'en']
   const messages = {}
+  const basePath = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
 
   for (const locale of locales) {
     try {
-      const response = await fetch(`/locales/${locale}.json`)
+      const response = await fetch(`${basePath}/locales/${locale}.json`)
       messages[locale] = await response.json()
     } catch (error) {
       console.error(`Failed to load locale ${locale}:`, error)
