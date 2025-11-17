@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    :href="href"
+    :href="processedHref"
     :type="type"
     :class="buttonClasses"
     :disabled="disabled"
@@ -13,6 +13,7 @@
 
 <script setup>
 import { computed, defineProps, defineEmits } from 'vue'
+import { useBasePath } from '@/composables/useBasePath'
 
 const props = defineProps({
   variant: {
@@ -40,8 +41,22 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['click'])
+const { getUrl } = useBasePath()
 
 const tag = computed(() => props.href ? 'a' : 'button')
+
+// Process href to add base path for internal links
+const processedHref = computed(() => {
+  if (!props.href) return null
+
+  // If it's an external link (starts with http:// or https://), return as-is
+  if (props.href.startsWith('http://') || props.href.startsWith('https://') || props.href.startsWith('#')) {
+    return props.href
+  }
+
+  // Otherwise, it's an internal link - add base path
+  return getUrl(props.href)
+})
 
 const buttonClasses = computed(() => {
   const base = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2'

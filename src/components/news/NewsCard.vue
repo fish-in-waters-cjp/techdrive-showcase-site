@@ -32,7 +32,7 @@
 
     <template #footer>
       <a
-        :href="news.url"
+        :href="processedUrl"
         class="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
       >
         {{ $t('mediaNews.readMore') }}
@@ -48,17 +48,32 @@
 import { computed, defineProps } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useLocale } from '@/composables/useLocale'
+import { useBasePath } from '@/composables/useBasePath'
 import Card from '@/components/ui/Card.vue'
 import Badge from '@/components/ui/Badge.vue'
 
 const { t } = useI18n()
 const { formatDate } = useLocale()
+const { getUrl } = useBasePath()
 
 const props = defineProps({
   news: {
     type: Object,
     required: true
   }
+})
+
+// Process news URL - if it's an internal link, add base path
+const processedUrl = computed(() => {
+  if (!props.news.url) return '#'
+
+  // If it's an external link, return as-is
+  if (props.news.url.startsWith('http://') || props.news.url.startsWith('https://') || props.news.url.startsWith('#')) {
+    return props.news.url
+  }
+
+  // Otherwise, it's an internal link - add base path
+  return getUrl(props.news.url)
 })
 
 const formattedDate = computed(() => formatDate(props.news.date, 'long'))

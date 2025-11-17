@@ -4,7 +4,7 @@
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <div class="flex items-center">
-          <a href="/" class="flex items-center">
+          <a :href="getUrl('')" class="flex items-center">
             <img
               src="/assets/logo.svg"
               alt="TechDrive Logo"
@@ -15,28 +15,28 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
-          <a href="/" class="text-gray-700 hover:text-blue-600 transition-colors">
+          <a :href="getUrl('')" class="text-gray-700 hover:text-blue-600 transition-colors">
             {{ $t('nav.home') }}
           </a>
-          <a href="/about.html" class="text-gray-700 hover:text-blue-600 transition-colors">
+          <a :href="getUrl('about.html')" class="text-gray-700 hover:text-blue-600 transition-colors">
             {{ $t('nav.about') }}
           </a>
-          <a href="/technology.html" class="text-gray-700 hover:text-blue-600 transition-colors">
+          <a :href="getUrl('technology.html')" class="text-gray-700 hover:text-blue-600 transition-colors">
             {{ $t('nav.technology') }}
           </a>
-          <a href="/products.html" class="text-gray-700 hover:text-blue-600 transition-colors">
+          <a :href="getUrl('products.html')" class="text-gray-700 hover:text-blue-600 transition-colors">
             {{ $t('nav.products') }}
           </a>
-          <a href="/retail-partner.html" class="text-gray-700 hover:text-blue-600 transition-colors">
+          <a :href="getUrl('retail-partner.html')" class="text-gray-700 hover:text-blue-600 transition-colors">
             {{ $t('nav.retailPartner') }}
           </a>
-          <a href="/media-news.html" class="text-gray-700 hover:text-blue-600 transition-colors">
+          <a :href="getUrl('media-news.html')" class="text-gray-700 hover:text-blue-600 transition-colors">
             {{ $t('nav.mediaNews') }}
           </a>
-          <a href="/support.html" class="text-gray-700 hover:text-blue-600 transition-colors">
+          <a :href="getUrl('support.html')" class="text-gray-700 hover:text-blue-600 transition-colors">
             {{ $t('nav.support') }}
           </a>
-          <a href="/contact.html" class="text-gray-700 hover:text-blue-600 transition-colors">
+          <a :href="getUrl('contact.html')" class="text-gray-700 hover:text-blue-600 transition-colors">
             {{ $t('nav.contact') }}
           </a>
 
@@ -71,28 +71,28 @@
       <!-- Mobile Navigation -->
       <div v-if="mobileMenuOpen" class="md:hidden mt-4 pb-4 border-t border-gray-200">
         <nav class="flex flex-col space-y-3 pt-4">
-          <a href="/" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
+          <a :href="getUrl('')" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
             {{ $t('nav.home') }}
           </a>
-          <a href="/about.html" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
+          <a :href="getUrl('about.html')" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
             {{ $t('nav.about') }}
           </a>
-          <a href="/technology.html" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
+          <a :href="getUrl('technology.html')" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
             {{ $t('nav.technology') }}
           </a>
-          <a href="/products.html" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
+          <a :href="getUrl('products.html')" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
             {{ $t('nav.products') }}
           </a>
-          <a href="/retail-partner.html" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
+          <a :href="getUrl('retail-partner.html')" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
             {{ $t('nav.retailPartner') }}
           </a>
-          <a href="/media-news.html" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
+          <a :href="getUrl('media-news.html')" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
             {{ $t('nav.mediaNews') }}
           </a>
-          <a href="/support.html" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
+          <a :href="getUrl('support.html')" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
             {{ $t('nav.support') }}
           </a>
-          <a href="/contact.html" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
+          <a :href="getUrl('contact.html')" class="text-gray-700 hover:text-blue-600 transition-colors py-2">
             {{ $t('nav.contact') }}
           </a>
 
@@ -119,10 +119,12 @@ import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useLocaleStore } from '@/stores/locale'
 import { useUIStore } from '@/stores/ui'
+import { useBasePath } from '@/composables/useBasePath'
 
 const { locale } = useI18n()
 const localeStore = useLocaleStore()
 const uiStore = useUIStore()
+const { getUrl } = useBasePath()
 
 const currentLocale = computed({
   get: () => localeStore.currentLocale,
